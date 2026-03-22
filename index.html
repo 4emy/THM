@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Human Manual</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #0e0e10;
@@ -20,16 +20,10 @@
   --accent: #e07850;
   --accent-soft: #c86840;
   --accent-dim: rgba(224, 120, 80, 0.08);
-  --gold: #c9a84c;
-  --gold-dim: rgba(201, 168, 76, 0.08);
-  --teal: #5bbcb8;
-  --teal-dim: rgba(91, 188, 184, 0.06);
-  --plum: #b48acc;
-  --plum-dim: rgba(180, 138, 204, 0.06);
-  --sidebar-w: 240px;
+  --sidebar-w: 260px;
   --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --serif: 'Crimson Pro', 'Source Serif 4', Georgia, serif;
-  --mono: 'JetBrains Mono', 'Consolas', monospace;
+  --serif: 'Lora', 'Source Serif 4', Georgia, serif;
+  --mono: 'IBM Plex Mono', 'Consolas', monospace;
 }
 
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
@@ -41,8 +35,10 @@ body {
   color: var(--text-primary);
   font-family: var(--sans);
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.75;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection { background: rgba(224,120,80,0.25); color: #fff; }
@@ -166,7 +162,7 @@ a:hover { color: var(--accent-soft); }
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 7px 20px;
+  padding: 7px 20px 7px 16px;
   text-decoration: none;
   color: var(--text-muted);
   font-family: var(--sans);
@@ -211,8 +207,8 @@ a:hover { color: var(--accent-soft); }
 .main {
   flex: 1;
   min-width: 0;
-  padding: 40px 48px 120px;
-  max-width: 900px;
+  padding: 48px 56px 120px;
+  max-width: 960px;
 }
 
 
@@ -232,8 +228,9 @@ a:hover { color: var(--accent-soft); }
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--gold), var(--teal), var(--plum));
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.6;
 }
 
 .intro-badge {
@@ -241,22 +238,23 @@ a:hover { color: var(--accent-soft); }
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-dim);
+  color: var(--text-muted);
+  background: var(--bg-hover);
   display: inline-block;
   padding: 4px 12px;
   border-radius: 4px;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .intro-title {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.3;
   margin-bottom: 20px;
+  letter-spacing: -0.01em;
 }
 
 .intro-body p {
@@ -311,11 +309,12 @@ a:hover { color: var(--accent-soft); }
 
 .chapter-title {
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
 .chapter-subtitle {
@@ -337,14 +336,14 @@ a:hover { color: var(--accent-soft); }
 
 .chapter-lede {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 17.5px;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.85;
   font-style: italic;
   margin-bottom: 32px;
   padding: 20px 24px;
-  border-left: 3px solid var(--accent);
-  background: var(--accent-dim);
+  border-left: 2px solid var(--border);
+  background: var(--bg-surface);
   border-radius: 0 6px 6px 0;
 }
 
@@ -353,19 +352,20 @@ a:hover { color: var(--accent-soft); }
 
 .section-title {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 16px;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--border-subtle);
+  letter-spacing: -0.005em;
 }
 
 .prose {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 16.5px;
   color: var(--text-secondary);
-  line-height: 1.85;
+  line-height: 1.9;
   margin-bottom: 20px;
 }
 
@@ -397,15 +397,6 @@ a:hover { color: var(--accent-soft); }
   line-height: 1.75;
   margin: 0;
 }
-
-.callout-gold { border-left-color: var(--gold); background: var(--gold-dim); }
-.callout-gold .callout-label { color: var(--gold); }
-
-.callout-teal { border-left-color: var(--teal); background: var(--teal-dim); }
-.callout-teal .callout-label { color: var(--teal); }
-
-.callout-plum { border-left-color: var(--plum); background: var(--plum-dim); }
-.callout-plum .callout-label { color: var(--plum); }
 
 
 .formula-block {
@@ -604,6 +595,71 @@ a:hover { color: var(--accent-soft); }
 .highlight { background: var(--accent-dim); padding: 0 3px; border-radius: 2px; }
 .hidden { display: none !important; }
 
+
+.citations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.citation-group {
+  padding: 0 0 24px;
+}
+
+.citation-group-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.citation-item {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.citation-ref {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  min-width: 28px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.citation-text {
+  color: var(--text-secondary);
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+.citation-text em {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.citation-text strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.citation-year {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-left: auto;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
 .back-top {
   position: fixed;
   bottom: 28px;
@@ -648,6 +704,7 @@ a:hover { color: var(--accent-soft); }
   .menu-btn { display: block; }
   .main { padding: 24px 20px 100px; max-width: 100%; }
   .two-col, .card-row { grid-template-columns: 1fr; }
+  .citations-grid { grid-template-columns: 1fr; }
   .topnav-meta { display: none; }
   .search-box { width: 180px; }
 }
@@ -668,7 +725,7 @@ a:hover { color: var(--accent-soft); }
 <header class="topnav">
   <div class="topnav-brand">The Human Manual</div>
   <div class="topnav-right">
-    <div class="topnav-meta"><span>19 Chapters</span><span>70+ Sections</span></div>
+    <div class="topnav-meta"><span>19 Chapters</span><span>90+ Sections</span></div>
     <div class="search-box">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="searchInput" placeholder="Search…" oninput="handleSearch(this.value)">
@@ -716,7 +773,7 @@ a:hover { color: var(--accent-soft); }
       <div class="intro-title">This is not a blog. This is a manual.</div>
       <div class="intro-body">
         <p>This is a singular <strong>index.html</strong> file containing full-on academic studies and research syntheses about the human species - no frameworks, no build tools, no dependencies. Just open the file.</p>
-        <p>Covering, from top to bottom: <strong>Neuroanatomy</strong> (cortical hierarchies, subcortical networks, brainstem modulators) - <strong>Neurochemistry</strong> (dopamine, serotonin, glutamate, GABA, neuropeptides, HPA axis) - <strong>Cognitive Architecture</strong> (dual-process theory, working memory, attention networks) - <strong>Behavioral Mechanisms</strong> (reinforcement learning, habit formation, decision-making) - <strong>Cognitive Biases & Heuristics</strong> (information processing biases, social cognitive biases) - <strong>Memory Systems</strong> (taxonomy, sleep-dependent consolidation, reconsolidation) - <strong>Neuroplasticity</strong> (Hebbian learning, critical periods, epigenetics) - <strong>Individual Differences</strong> (temperament, Big Five neurobiology, heritability) - <strong>Stress & Allostasis</strong> (acute response, chronic pathology, resilience) - <strong>Psychopathology</strong> (depression, addiction, schizophrenia mechanisms) - <strong>Emotion & Motivation</strong> (affective neuroscience, self-determination theory) - <strong>Social Cognition</strong> (theory of mind, moral cognition) - <strong>Sleep & Circadian Biology</strong> (architecture, two-process model) - <strong>Consciousness</strong> (global workspace, integrated information, predictive processing) - <strong>Interventions</strong> (CBT, pharmacology, psychedelics) - <strong>Integrative Frameworks</strong> (resting-state networks, free energy principle) - <strong>Human Limits</strong> (physiological boundaries, cognitive capacity) - <strong>Language & Thought</strong> (neural architecture, embodied semantics) - and <strong>Development Across the Lifespan</strong> (critical periods, adolescent brain, aging).</p>
+        <p>Covering, from top to bottom: <strong>Neuroanatomy</strong> (cortical hierarchies, subcortical networks, brainstem modulators, split-brain phenomena, the human connectome) - <strong>Neurochemistry</strong> (dopamine, serotonin, glutamate, GABA, neuropeptides, HPA axis, gut-brain axis) - <strong>Cognitive Architecture</strong> (dual-process theory, working memory, attention networks, cognitive load, decision fatigue) - <strong>Behavioral Mechanisms</strong> (reinforcement learning, habit formation, decision-making under uncertainty, prospect theory, bounded rationality, delay of gratification) - <strong>Cognitive Biases & Heuristics</strong> (information processing biases, social cognitive biases, Dunning-Kruger, choice overload) - <strong>Memory Systems</strong> (taxonomy, sleep-dependent consolidation, reconsolidation, memory athletes, method of loci) - <strong>Neuroplasticity</strong> (Hebbian learning, critical periods, epigenetics, London taxi drivers, constraint-induced therapy) - <strong>Individual Differences</strong> (temperament, Big Five neurobiology, heritability) - <strong>Stress & Allostasis</strong> (acute response, chronic pathology, resilience, burnout neuroscience, vagal tone) - <strong>Psychopathology</strong> (depression, addiction, schizophrenia, ADHD, autism spectrum mechanisms) - <strong>Emotion & Motivation</strong> (affective neuroscience, self-determination theory, constructed emotion, pain-emotion overlap) - <strong>Social Cognition</strong> (theory of mind, moral cognition, Dunbar's number, mirror neuron reality) - <strong>Sleep & Circadian Biology</strong> (architecture, two-process model, social jet lag, chronotype) - <strong>Consciousness</strong> (global workspace, integrated information, predictive processing, neural correlates, binding problem, altered states, the hard problem, change blindness) - <strong>Interventions</strong> (CBT, pharmacology, psychedelics, exercise as medicine, TMS/tDCS neuromodulation) - <strong>Integrative Frameworks</strong> (resting-state networks, free energy principle, predictive coding, active inference) - <strong>Human Limits</strong> (physiological boundaries, cognitive capacity, stress-performance curve, flow states, ego depletion science, deliberate practice, attentional blink) - <strong>Language & Thought</strong> (neural architecture, embodied semantics, bilingualism, inner speech, aphasia recovery, number words, linguistic relativity) - and <strong>Development Across the Lifespan</strong> (critical periods, adolescent brain, aging, cognitive reserve, neurodegenerative trajectories, critical period reopening).</p>
         <p class="intro-footer">Fully open-source. One file. Zero dependencies. Everything you need to understand the machine you are running on.</p>
       </div>
     </div>
@@ -725,7 +782,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter I</span>
         <div class="chapter-title">Neuroanatomical Foundations</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80" alt="Brain neural pathways - neuroanatomical structures" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80" alt="Human brain MRI sagittal section - cortical and subcortical architecture" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Cortical Hierarchies · Subcortical Networks · Brainstem Modulators</div>
       </div>
@@ -738,10 +795,10 @@ a:hover { color: var(--accent-soft); }
           <thead><tr><th>Region</th><th>Primary Function</th><th>Behavioral Output</th><th>Damage Effect</th></tr></thead>
           <tbody>
             <tr><td>Prefrontal Cortex (PFC)</td><td>Executive control, working memory, value integration</td><td>Planning, inhibition, goal maintenance, moral reasoning</td><td>Impulsivity, personality change, loss of foresight</td></tr>
-            <tr><td>→ Dorsolateral (dlPFC)</td><td>Cold cognition - manipulation and monitoring of mental content</td><td>Complex reasoning, cognitive flexibility, working memory</td><td>Dysexecutive syndrome; poor task-switching</td></tr>
-            <tr><td>→ Ventromedial (vmPFC)</td><td>Hot cognition - emotion-guided value decision-making</td><td>Risk assessment, trust, emotional memory integration</td><td>Somatic marker failure; gambling-style decisions</td></tr>
-            <tr><td>→ Orbitofrontal (OFC)</td><td>Reward and punishment encoding; reversal learning</td><td>Impulse control, social valuation, credit assignment</td><td>Perseveration; inability to learn from punishment</td></tr>
-            <tr><td>→ Anterior (aPFC / BA10)</td><td>Branching memory; prospective and retrospective metacognition</td><td>Self-monitoring, uncertainty management, multi-tasking</td><td>Difficulty maintaining concurrent goals</td></tr>
+            <tr><td>> Dorsolateral (dlPFC)</td><td>Cold cognition - manipulation and monitoring of mental content</td><td>Complex reasoning, cognitive flexibility, working memory</td><td>Dysexecutive syndrome; poor task-switching</td></tr>
+            <tr><td>> Ventromedial (vmPFC)</td><td>Hot cognition - emotion-guided value decision-making</td><td>Risk assessment, trust, emotional memory integration</td><td>Somatic marker failure; gambling-style decisions</td></tr>
+            <tr><td>> Orbitofrontal (OFC)</td><td>Reward and punishment encoding; reversal learning</td><td>Impulse control, social valuation, credit assignment</td><td>Perseveration; inability to learn from punishment</td></tr>
+            <tr><td>> Anterior (aPFC / BA10)</td><td>Branching memory; prospective and retrospective metacognition</td><td>Self-monitoring, uncertainty management, multi-tasking</td><td>Difficulty maintaining concurrent goals</td></tr>
             <tr><td>Anterior Cingulate (ACC)</td><td>Conflict monitoring, error detection, pain affect</td><td>Performance adjustment, motivation, autonomic regulation</td><td>Akinetic mutism; blunted pain affect</td></tr>
             <tr><td>Posterior Cingulate (PCC)</td><td>Self-referential processing; episodic memory retrieval</td><td>Mind-wandering, rumination, autobiographical recall</td><td>Memory impairment; altered self-referential processing</td></tr>
             <tr><td>Parietal Cortex</td><td>Spatial integration, attention shifting, number processing</td><td>Attention allocation, sensory binding, tool use</td><td>Neglect syndrome; apraxia; Gerstmann syndrome</td></tr>
@@ -763,7 +820,7 @@ a:hover { color: var(--accent-soft); }
               <li><strong>Direct (D1):</strong> Go - action facilitation</li>
               <li><strong>Indirect (D2):</strong> No-Go - action suppression</li>
               <li><strong>Hyperdirect (STN):</strong> Emergency global brake</li>
-              <li>Goal-directed → habitual with repetition</li>
+              <li>Goal-directed > habitual with repetition</li>
               <li>Caudate: cognitive; putamen: motor; NAc: reward</li>
             </ul></div>
           </div>
@@ -797,7 +854,7 @@ a:hover { color: var(--accent-soft); }
               <li><strong>Pulvinar:</strong> Salience, attention, visual threat</li>
               <li><strong>MD nucleus:</strong> PFC connectivity, working memory</li>
               <li>Thalamo-cortical loops generate conscious binding</li>
-              <li>Bilateral damage → coma, akinetic mutism</li>
+              <li>Bilateral damage > coma, akinetic mutism</li>
             </ul></div>
           </div>
         </div>
@@ -819,6 +876,50 @@ a:hover { color: var(--accent-soft); }
         </table>
       </div>
 
+      <div class="section">
+        <div class="section-title">The Split Brain: Two Minds in One Skull</div>
+        <div class="prose">Roger Sperry and Michael Gazzaniga's studies of patients who underwent corpus callosotomy (severing the ~200 million fibers connecting the hemispheres) for intractable epilepsy revealed that consciousness is not monolithic. Each hemisphere can process information independently, maintain its own attentional focus, and generate its own interpretations - yet in the intact brain, these two streams are unified by interhemispheric communication. The left hemisphere's specialization goes beyond language: Gazzaniga's "left-brain interpreter" hypothesis proposes that the left hemisphere generates post-hoc narratives to explain behaviors initiated by the right hemisphere or by subcortical systems. When the right hemisphere (which controls the left hand) performs an action based on information the left hemisphere never received, the left hemisphere instantly fabricates a plausible explanation - and the patient believes it. This "confabulation engine" may be the origin of the universal human tendency to construct rational narratives for decisions made by processes we have no direct access to.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Left Hemisphere Specializations</div>
+            <ul>
+              <li><span class="li-k">Language</span><span class="li-v">Production (Broca's), syntax, phonological processing, propositional speech</span></li>
+              <li><span class="li-k">Analytical reasoning</span><span class="li-v">Logical deduction, sequential processing, mathematical computation</span></li>
+              <li><span class="li-k">Interpreter function</span><span class="li-v">Post-hoc narrative generation; causal attribution; maintaining coherent self-model</span></li>
+              <li><span class="li-k">Fine motor</span><span class="li-v">Right hand control; skilled tool use; writing precision</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Right Hemisphere Specializations</div>
+            <ul>
+              <li><span class="li-k">Spatial processing</span><span class="li-v">Mental rotation, navigation, face recognition, visuospatial construction</span></li>
+              <li><span class="li-k">Emotional prosody</span><span class="li-v">Detecting tone, sarcasm, emotional valence of speech</span></li>
+              <li><span class="li-k">Holistic perception</span><span class="li-v">Gestalt processing; seeing the forest rather than the trees</span></li>
+              <li><span class="li-k">Novelty detection</span><span class="li-v">Right-lateralized orienting response; alerting network hub</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-label">The Interpreter Effect in Everyday Life</div>
+          <p>Gazzaniga argues the interpreter is not a quirk of split-brain pathology but a fundamental feature of normal cognition. Every intact brain generates continuous causal narratives for its own behavior - narratives that are often constructed after the behavior has already been initiated by unconscious processes. The feeling of having "decided" to do something often follows the initiation of the action by 200–500ms (Libet's readiness potential; Soon et al.'s decoded fMRI predictions). The interpreter then claims credit. This does not mean free will is illusory - but it does mean the conscious experience of deciding is partly a reconstruction, not a direct readout of the causal process.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">The Human Connectome: Wiring Diagram of the Brain</div>
+        <div class="prose">The Human Connectome Project, launched in 2009, mapped the brain's structural and functional connectivity at unprecedented resolution, revealing that individual differences in neural wiring predict cognitive abilities, personality traits, and vulnerability to psychiatric disorders. The brain's network topology is not random - it follows a "small-world" architecture (high local clustering with short path lengths between distant regions) that optimizes the trade-off between local processing efficiency and global integration. A handful of "hub" regions - particularly the posterior cingulate, precuneus, and lateral prefrontal cortex - are disproportionately connected and serve as traffic bottlenecks. Damage to hubs produces disproportionately large cognitive deficits compared to damage to peripheral nodes, explaining why strokes in certain locations are devastating while others are remarkably well-tolerated.</div>
+        <div class="fact-grid">
+          <div class="fact-cell"><div class="fact-val">86B</div><div class="fact-lab">Neurons in the human brain</div></div>
+          <div class="fact-cell"><div class="fact-val">100T</div><div class="fact-lab">Estimated synaptic connections</div></div>
+          <div class="fact-cell"><div class="fact-val">~150K km</div><div class="fact-lab">Total axon length (myelinated white matter)</div></div>
+          <div class="fact-cell"><div class="fact-val">6</div><div class="fact-lab">Degrees of separation between any two cortical regions</div></div>
+          <div class="fact-cell"><div class="fact-val">~20W</div><div class="fact-lab">Total power consumption (comparable to a dim light bulb)</div></div>
+          <div class="fact-cell"><div class="fact-val">2.5 PB</div><div class="fact-lab">Estimated long-term memory storage capacity</div></div>
+        </div>
+      </div>
+
+    </div>
+
     </div>
 
     <div class="chapter-ornament">✦ · ✦ · ✦</div>
@@ -827,7 +928,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter II</span>
         <div class="chapter-title">Neurochemical Dynamics</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200&q=80" alt="Laboratory research - neurochemical processes" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=1200&q=80" alt="Abstract molecular bonds and chemical structures - neurotransmitter dynamics" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Dopamine · Serotonin · Glutamate · GABA · Neuropeptides</div>
       </div>
@@ -840,8 +941,8 @@ a:hover { color: var(--accent-soft); }
           <div class="eq">δ(t) = r(t) + γ·V(s_{t+1}) − V(s_t)</div>
           <div class="comment">- reward prediction error: actual + discounted future − current expectation</div>
           <div style="margin-top:12px;">
-            <div class="eq">Phasic burst (8–15 Hz): δ > 0 → Positive RPE → Approach & Learn</div>
-            <div class="eq">Tonic suppression: δ &lt; 0 → Negative RPE → Avoid & Recalibrate</div>
+            <div class="eq">Phasic burst (8–15 Hz): δ > 0 > Positive RPE > Approach & Learn</div>
+            <div class="eq">Tonic suppression: δ &lt; 0 > Negative RPE > Avoid & Recalibrate</div>
           </div>
         </div>
         <div class="two-col">
@@ -851,7 +952,7 @@ a:hover { color: var(--accent-soft); }
               <li><span class="li-k">Nigrostriatal</span><span class="li-v">Motor initiation; degeneration = Parkinson's disease</span></li>
               <li><span class="li-k">Mesolimbic</span><span class="li-v">"Wanting" - incentive salience (NAc); addiction vulnerability</span></li>
               <li><span class="li-k">Mesocortical</span><span class="li-v">Executive motivation; inverted-U curve for PFC performance</span></li>
-              <li><span class="li-k">Tuberoinfundibular</span><span class="li-v">Prolactin inhibition; antipsychotics → hyperprolactinemia</span></li>
+              <li><span class="li-k">Tuberoinfundibular</span><span class="li-v">Prolactin inhibition; antipsychotics > hyperprolactinemia</span></li>
             </ul>
           </div>
           <div class="col-pane">
@@ -869,7 +970,7 @@ a:hover { color: var(--accent-soft); }
       <div class="section">
         <div class="section-title">Serotonin: The Patience Neurotransmitter</div>
         <div class="prose">Where dopamine encodes the value of immediate rewards, serotonin modulates tolerance of delay and the weighting of future costs. The classic opposition is temporal: dopamine pulls behavior toward <em>now</em>, serotonin holds open the horizon of <em>later</em>. Acute tryptophan depletion - which drops brain 5-HT within hours - increases impulsivity, aggression, and vulnerability to negative mood without producing clinical depression in healthy individuals.</div>
-        <div class="callout callout-teal">
+        <div class="callout">
           <div class="callout-label">Key Insight</div>
           <p>SSRIs do not work by flooding the synapse with serotonin. They block the reuptake transporter, prolonging the dwell-time of synaptically released 5-HT. The clinical effect requires 2–4 weeks because downstream receptor changes and hippocampal neurogenesis - not the immediate pharmacology - produce the therapeutic benefit.</p>
         </div>
@@ -902,7 +1003,7 @@ a:hover { color: var(--accent-soft); }
             <ul>
               <li><span class="li-k">Parvalbumin (PV+)</span><span class="li-v">Fast-spiking; perisomatic inhibition; gamma oscillations</span></li>
               <li><span class="li-k">Somatostatin (SST+)</span><span class="li-v">Dendritic inhibition; modulatory, context-sensitive</span></li>
-              <li><span class="li-k">VIP interneurons</span><span class="li-v">Disinhibition - inhibit other interneurons → increase gain</span></li>
+              <li><span class="li-k">VIP interneurons</span><span class="li-v">Disinhibition - inhibit other interneurons > increase gain</span></li>
               <li><span class="li-k">PV+ dysfunction</span><span class="li-v">Linked to schizophrenia; impairs working memory rhythms</span></li>
             </ul>
           </div>
@@ -918,7 +1019,7 @@ a:hover { color: var(--accent-soft); }
           <div class="step-item"><div class="step-num">04</div><div class="step-body"><div class="step-title">Adrenal Cortex Response</div><div class="step-desc">Cortisol is synthesized and released from the zona fasciculata. Baseline: 20–30 mg/day. Acute stress: 200–300 mg/day. Peak: 30–45 minutes post-stressor.</div></div></div>
           <div class="step-item"><div class="step-num">05</div><div class="step-body"><div class="step-title">Negative Feedback</div><div class="step-desc">Cortisol binds glucocorticoid receptors (GR) in the hippocampus and PFC, downregulating CRH expression. Chronic stress impairs this feedback - the origin of hypercortisolemia in depression.</div></div></div>
         </div>
-        <div class="callout callout-gold">
+        <div class="callout">
           <div class="callout-label">Cortisol & Memory: The Inverted-U</div>
           <p>Low and high cortisol both impair declarative memory. Moderate cortisol enhances hippocampal encoding through GR activation of BDNF. The same molecule that consolidates traumatic memories also, at high doses, impairs hippocampal neurogenesis and contributes to depressive memory bias.</p>
         </div>
@@ -940,6 +1041,17 @@ a:hover { color: var(--accent-soft); }
         </table>
       </div>
 
+      <div class="section">
+        <div class="section-title">The Gut-Brain Axis: The Second Brain</div>
+        <div class="prose">The enteric nervous system (ENS) - the network of 200–600 million neurons embedded in the gut wall - is sometimes called the "second brain" because it can operate autonomously from the CNS, coordinating digestion, motility, and secretion without input from the spinal cord or brainstem. But the relationship is bidirectional: the gut communicates with the brain through the vagus nerve (80% of vagal fibers are afferent - carrying information from gut to brain, not the reverse), the immune system, and the gut microbiome's production of neurotransmitters and metabolites. The gut microbiota - approximately 38 trillion bacteria, more numerous than human cells - produce roughly 95% of the body's serotonin (in enterochromaffin cells), synthesize GABA and dopamine precursors, and modulate HPA axis reactivity. Germ-free mice show exaggerated stress responses that normalize only with specific bacterial colonization. In humans, the gut microbiome composition correlates with depression severity, anxiety traits, and even social behavior, though causality in human studies remains difficult to establish.</div>
+        <div class="callout">
+          <div class="callout-label">The Vagus as Information Highway</div>
+          <p>The vagus nerve is the primary neural conduit between gut and brain. Vagal afferents carry information about gut distension, nutrient composition, inflammatory cytokines, and microbial metabolites to the nucleus tractus solitarius (NTS) in the brainstem, which relays to the hypothalamus, amygdala, and PFC. Vagotomy studies in rodents show impaired stress regulation, reduced anxiety-like behavior, and altered satiety signaling. Vagus nerve stimulation (VNS) is FDA-approved for treatment-resistant depression and epilepsy - its efficacy may partly reflect the restoration of gut-brain communication disrupted in these conditions. The implication: your gut is not merely a digestive organ but an active participant in mood regulation, decision-making, and stress resilience.</p>
+        </div>
+      </div>
+
+    </div>
+
     </div>
 
     <div class="chapter-ornament">✦ · ✦ · ✦</div>
@@ -948,7 +1060,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter III</span>
         <div class="chapter-title">Cognitive Architecture</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80" alt="Abstract neural network - cognitive architecture" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1502104034360-73176bb1e92e?w=1200&q=80" alt="fMRI brain activation patterns - dual-process cognitive networks and executive function" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Dual-Process Theory · Working Memory · Executive Function · Attention Networks</div>
       </div>
@@ -1027,6 +1139,35 @@ a:hover { color: var(--accent-soft); }
         </table>
       </div>
 
+      <div class="section">
+        <div class="section-title">Cognitive Load Theory & the Limits of Simultaneity</div>
+        <div class="prose">Sweller's cognitive load theory formalizes an intuition: the brain cannot process unlimited information simultaneously. Working memory's ~4-chunk limit means that instructional design, interface design, and even conversation are subject to hard constraints. When intrinsic load (the inherent complexity of the material), extraneous load (irrelevant processing demands), and germane load (effort devoted to schema construction) together exceed working memory capacity, learning collapses. This is why multitasking is not merely inefficient but neurologically impossible at the level of conscious processing - what people call multitasking is actually rapid task-switching with a measurable cost of 200–400ms per switch, accumulated cortisol elevation, and a 40% reduction in productive output. The prefrontal cortex can maintain only one task set active at a time; switching requires deactivating the old set (which persists as interference) and loading the new one.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Types of Cognitive Load</div>
+            <ul>
+              <li><span class="li-k">Intrinsic load</span><span class="li-v">Determined by element interactivity - how many elements must be processed simultaneously. Can be managed through sequencing but not eliminated.</span></li>
+              <li><span class="li-k">Extraneous load</span><span class="li-v">Caused by poor instructional design, irrelevant information, split-attention effects. Should be minimized.</span></li>
+              <li><span class="li-k">Germane load</span><span class="li-v">Cognitive effort devoted to constructing and automating schemas. Desired outcome of instruction.</span></li>
+              <li><span class="li-k">Total constraint</span><span class="li-v">Intrinsic + extraneous + germane must not exceed WM capacity at any moment. If it does, learning stalls.</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Multitasking: The Neural Reality</div>
+            <ul>
+              <li><span class="li-k">Task-switching cost</span><span class="li-v">200–400ms per switch; ACC conflict monitoring engaged; error rate doubles</span></li>
+              <li><span class="li-k">Dual-task interference</span><span class="li-v">Two tasks requiring the same modality (e.g., two verbal tasks) cannot run in parallel; neural bottleneck at response selection</span></li>
+              <li><span class="li-k">Automaticity exception</span><span class="li-v">Highly practiced tasks (walking, driving on empty road) can proceed alongside conscious tasks because they require minimal PFC engagement</span></li>
+              <li><span class="li-k">Media multitasking</span><span class="li-v">Heavy media multitaskers perform worse on attentional filtering tasks; reduced gray matter in ACC (Loh & Kanai, 2014)</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-label">Decision Fatigue: The Judge and the Parole Board</div>
+          <p>Danziger et al. (2011) found that Israeli judges granted parole at a rate of ~65% after a food break but near 0% just before one. While methodological critiques have been raised, subsequent controlled studies confirm that sustained decision-making depletes the same dlPFC resources required for deliberate choice. The mechanism is not glucose depletion (the original explanation has been discredited) but opportunity cost evaluation: as the brain accumulates decisions, the perceived cost of each additional deliberate evaluation rises, and System 1 defaults take over. This is why critical decisions should be made when cognitive resources are fresh, and why Amazon's Jeff Bezos famously insists on making high-stakes decisions before lunch.</p>
+        </div>
+      </div>
+
     </div>
 
     <div class="chapter-ornament">✦ · ✦ · ✦</div>
@@ -1035,7 +1176,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter IV</span>
         <div class="chapter-title">Behavioral Mechanisms</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=80" alt="Path through forest - behavioral choices" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1200&q=80" alt="Crossroads in wilderness - behavioral decision pathways" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Reinforcement Learning · Habit Formation · Decision-Making Under Uncertainty</div>
       </div>
@@ -1098,9 +1239,74 @@ a:hover { color: var(--accent-soft); }
           <div class="step-item"><div class="step-num">03</div><div class="step-body"><div class="step-title">Automation - DLS Takes Over</div><div class="step-desc">The dorsolateral striatum runs the cached S-R sequence. PFC engagement drops. The action can now be executed while cognitively occupied with something else entirely.</div></div></div>
           <div class="step-item"><div class="step-num">04</div><div class="step-body"><div class="step-title">Consolidation - Sleep Dependency</div><div class="step-desc">Offline SWS replay in the hippocampus and striatum consolidates the motor sequence. Sleep-deprived subjects show impaired automatization even with equal practice.</div></div></div>
         </div>
-        <div class="callout callout-plum">
+        <div class="callout">
           <div class="callout-label">The Devaluation Test</div>
           <p>To determine whether behavior is goal-directed or habitual: devalue the outcome (make the animal sick after eating the reward food), then test performance. Goal-directed behavior drops immediately; habitual behavior continues unabated. Human studies using this paradigm show that high chronic stress dramatically accelerates the shift to habit-based control.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Decision-Making Under Uncertainty</div>
+        <div class="prose">Human decision-making deviates systematically from rational expected-utility maximization - not because people are irrational, but because the brain evolved to make fast, satisficing decisions under ecological uncertainty, not to solve formal optimization problems. Kahneman and Tversky's prospect theory, which earned the 2002 Nobel Prize in Economics, captured the core deviations: decisions are made relative to a reference point, losses loom larger than equivalent gains, and both probabilities and values are subject to characteristic distortions.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Prospect Theory: Core Principles</div>
+            <ul>
+              <li><span class="li-k">Reference dependence</span><span class="li-v">Outcomes are coded as gains/losses relative to a reference point, not absolute wealth. The same lottery is perceived differently if framed as gain vs. loss.</span></li>
+              <li><span class="li-k">Loss aversion</span><span class="li-v">Losses are weighted approximately 2× more than equivalent gains. The neural basis: loss signals activate anterior insula and amygdala more strongly than gain signals activate NAc.</span></li>
+              <li><span class="li-k">Diminishing sensitivity</span><span class="li-v">Both the value and probability functions are concave for gains and convex for losses. The difference between $100 and $200 feels larger than between $1,100 and $1,200.</span></li>
+              <li><span class="li-k">Probability weighting</span><span class="li-v">Small probabilities are overweighted (lottery effect); moderate-to-high probabilities are underweighted (certainty effect). This explains simultaneous gambling and insurance purchasing.</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Neural Decision Circuits</div>
+            <ul>
+              <li><span class="li-k">vmPFC / OFC</span><span class="li-v">Value integration; computes a "common currency" for comparing options across domains (food vs. money vs. social approval)</span></li>
+              <li><span class="li-k">Dorsal striatum</span><span class="li-v">Accumulates evidence over time; motor commitment threshold. When neural firing reaches a bound, the decision is executed.</span></li>
+              <li><span class="li-k">ACC</span><span class="li-v">Conflict and volatility monitoring; signals when the current strategy should be abandoned. Drives exploration when exploitation becomes unrewarded.</span></li>
+              <li><span class="li-k">Anterior insula</span><span class="li-v">Interoceptive prediction of somatic consequences; contributes to risk aversion by simulating anticipated regret or disgust.</span></li>
+              <li><span class="li-k">Lateral PFC</span><span class="li-v">Rule-based control; suppresses impulsive choices; implements self-imposed constraints (dieting, saving).</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="formula-block">
+          <div class="eq">Prospect Theory Value Function:</div>
+          <div class="eq">V(x) = x^α if x ≥ 0; V(x) = −λ·(−x)^β if x &lt; 0</div>
+          <div class="eq">where α ≈ 0.88, β ≈ 0.88, λ ≈ 2.25 (Tversky & Kahneman, 1992)</div>
+          <div style="margin-top:10px;">
+            <div class="eq">Drift-Diffusion Model:</div>
+            <div class="eq">dx = v·dt + σ·dW; decide when |x| ≥ boundary a</div>
+            <div class="eq">v = evidence accumulation rate; a = decision caution; t₀ = non-decision time</div>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-label">Bounded Rationality: Why Perfect Decisions Are Impossible</div>
+          <p>Herbert Simon's concept of bounded rationality recognized that real-world decision-makers face fundamental constraints: incomplete information, limited cognitive capacity, and finite time. The brain's solution is not to optimize but to satisfice - choosing the first option that meets a "good enough" threshold. Ecological rationality research (Gigerenzer) shows that simple heuristics - recognition heuristic, take-the-best, 1/N allocation - often outperform complex optimization strategies precisely because they are robust to noise and data-sparse environments. The brain's "irrationality" is often rational given its constraints.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Delay of Gratification: The Marshmallow Test and Beyond</div>
+        <div class="prose">Mischel's famous marshmallow test (1972) offered preschoolers a choice: one treat now, or two if they waited 15 minutes. The ability to delay gratification at age 4 predicted SAT scores, educational attainment, BMI, and substance use decades later - correlations that held even after controlling for socioeconomic status. The original interpretation emphasized trait self-control. However, Watts et al.'s 2018 replication with a larger, more diverse sample showed that the original correlations were substantially reduced when controlling for early cognitive ability and socioeconomic background. The modern picture: delay ability reflects a combination of stable individual differences in dopaminergic reactivity (how strongly the brain codes immediate reward), PFC regulatory capacity (which develops through childhood), and environmental trust (whether the child believes the second marshmallow will actually materialize). Children from unstable environments who learned that waiting often means losing everything rationally chose immediate reward. The ability to delay is partly a cognitive skill, partly a trust computation, and partly a reflection of how predictable one's environment has been.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Strategies That Worked (Mischel's Observations)</div>
+            <ul>
+              <li><span class="li-k">Distraction</span><span class="li-v">Children who sang, played, or looked away from the treat waited longer</span></li>
+              <li><span class="li-k">Reframing</span><span class="li-v">Imagining the marshmallow as a cloud (abstract) vs. a tasty treat (concrete) doubled wait times</span></li>
+              <li><span class="li-k">Implementation intentions</span><span class="li-v">"If I want the marshmallow, I will look at the wall" - pre-commitment strategies</span></li>
+              <li><span class="li-k">Self-distancing</span><span class="li-v">Advising an imaginary friend what to do improved children's own delay performance</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Neural Architecture of Delay</div>
+            <ul>
+              <li><span class="li-k">Ventral striatum / NAc</span><span class="li-v">Encodes immediate reward value; stronger activation → more impulsivity</span></li>
+              <li><span class="li-k">dlPFC / vlPFC</span><span class="li-v">Top-down regulation; suppresses immediate choice; activates when delay strategy is employed</span></li>
+              <li><span class="li-k">Lateral OFC</span><span class="li-v">Encodes future reward value; mediates the subjective devaluation of delayed options</span></li>
+              <li><span class="li-k">Developmental trajectory</span><span class="li-v">Delay capacity increases steadily from age 3 to 12 as PFC myelination progresses; individual differences stable by age 10</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1112,7 +1318,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter V</span>
         <div class="chapter-title">Cognitive Biases &amp; Heuristics</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80" alt="Abstract fractal patterns - cognitive distortions" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1200&q=80" alt="Optical illusion patterns - systematic cognitive distortions" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Fast Heuristics · Systematic Errors · Neural Substrates</div>
       </div>
@@ -1125,7 +1331,7 @@ a:hover { color: var(--accent-soft); }
           <tbody>
             <tr><td>Confirmation Bias</td><td>ACC selective gating; vmPFC motivated reasoning; attentional orienting to schema-consistent content</td><td>Filter bubbles, echo chambers, pseudoscience belief persistence</td><td>Avoids cognitive dissonance; maintains stable world model</td></tr>
             <tr><td>Anchoring &amp; Adjustment</td><td>Insufficient cortical adjustment from initial representation; primacy effects in working memory</td><td>Negotiation failures; mispricing; physician diagnostic anchoring</td><td>Reduces search cost; first information often is most reliable</td></tr>
-            <tr><td>Availability Heuristic</td><td>Salience network hyperactivation; retrieval fluency misattributed to frequency</td><td>Overestimating risks of plane crashes, shark attacks; underestimating heart disease</td><td>Frequency → recency correlation in natural environments</td></tr>
+            <tr><td>Availability Heuristic</td><td>Salience network hyperactivation; retrieval fluency misattributed to frequency</td><td>Overestimating risks of plane crashes, shark attacks; underestimating heart disease</td><td>Frequency > recency correlation in natural environments</td></tr>
             <tr><td>Framing Effects</td><td>Amygdala (loss frames amplify threat); NAc/vmPFC (gain frames activate reward)</td><td>Medical decisions swing between "90% survival" vs "10% mortality" framing</td><td>Loss sensitivity (asymmetric 2:1 weighting) is evolutionarily rational</td></tr>
             <tr><td>Loss Aversion</td><td>Amygdala threat response; striatal endowment effect; anterior insula (disgust/loss)</td><td>Holding losing stocks; not switching energy suppliers; status quo bias</td><td>In survival contexts, losses are genuinely more consequential than gains</td></tr>
             <tr><td>Hyperbolic Discounting</td><td>Limbic/mesolimbic DA dominates vmPFC over immediate rewards; serotonin modulates future weighting</td><td>Addiction, credit card debt, unhealthy eating, procrastination</td><td>Uncertainty of future rewards makes present-weighting rational in volatile environments</td></tr>
@@ -1157,6 +1363,15 @@ a:hover { color: var(--accent-soft); }
         </div>
       </div>
 
+      <div class="section">
+        <div class="section-title">Metacognitive Biases: Knowing What You Don't Know</div>
+        <div class="prose">The Dunning-Kruger effect (1999) demonstrated that people with limited knowledge in a domain dramatically overestimate their competence, while experts slightly underestimate theirs. This is not simply a cognitive deficit of the unskilled - it is a metacognitive failure: the skills needed to produce correct judgments are the same skills needed to recognize correct judgments. Without domain knowledge, the individual lacks the tools to detect their own errors. The effect has been partially reinterpreted as statistical regression to the mean (Krueger & Mueller, 2002), but the core insight stands: self-assessment accuracy requires competence in the very domain being assessed. This has profound implications for education (students who need the most help cannot identify what they need), hiring (confidence is a poor proxy for competence), and expertise recognition.</div>
+        <div class="callout">
+          <div class="callout-label">Choice Overload: When More Is Less</div>
+          <p>Iyengar and Lepper's jam study (2000) showed that consumers presented with 24 varieties of jam were 1/10th as likely to purchase as those offered 6. The "paradox of choice" (Schwartz) reflects the brain's finite evaluative capacity: comparing options requires dlPFC engagement, and beyond a critical number of alternatives (~7-10 for simple attributes), the metabolic cost of evaluation exceeds the expected benefit of finding a better option. The result: decision avoidance, reduced satisfaction with whatever is chosen, and increased regret (because the foregone alternatives are more numerous and salient). Subsequent meta-analyses (Scheibehenne et al., 2010) show the effect is real but moderated by expertise, preference clarity, and decision reversibility. The neural signature: ACC conflict monitoring increases linearly with option count, then collapses as choice avoidance kicks in.</p>
+        </div>
+      </div>
+
     </div>
 
     <div class="chapter-ornament">✦ · ✦ · ✦</div>
@@ -1165,7 +1380,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter VI</span>
         <div class="chapter-title">Memory Systems &amp; Consolidation</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200&q=80" alt="Books and archives - memory storage" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=1200&q=80" alt="Misty library corridors - memory consolidation and retrieval" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Taxonomy · Synaptic Plasticity · Sleep-Dependent Consolidation · Reconsolidation</div>
       </div>
@@ -1200,7 +1415,7 @@ a:hover { color: var(--accent-soft); }
         <table class="data-table">
           <thead><tr><th>Sleep Stage</th><th>Neural Mechanism</th><th>Memory Function</th><th>If Disrupted</th></tr></thead>
           <tbody>
-            <tr><td>Slow-Wave Sleep (N3/SWS)</td><td>Slow oscillations (0.5–1 Hz) nest spindles (12–15 Hz) which nest sharp-wave ripples (80–100 Hz). This triple coupling drives hippocampal → cortical replay and transfer.</td><td>Declarative memory consolidation; fact and event stabilization</td><td>50% reduction in verbal recall after one SWS-deprived night</td></tr>
+            <tr><td>Slow-Wave Sleep (N3/SWS)</td><td>Slow oscillations (0.5–1 Hz) nest spindles (12–15 Hz) which nest sharp-wave ripples (80–100 Hz). This triple coupling drives hippocampal > cortical replay and transfer.</td><td>Declarative memory consolidation; fact and event stabilization</td><td>50% reduction in verbal recall after one SWS-deprived night</td></tr>
             <tr><td>REM Sleep</td><td>Cholinergic activation, noradrenaline suppression (safe-context replay). Theta oscillations link hippocampus and amygdala. Synaptic potentiation.</td><td>Emotional memory processing (reduces affective charge while preserving content); procedural memory; creative integration</td><td>Increased emotional reactivity; impaired emotion regulation; PTSD linked to REM dysfunction</td></tr>
             <tr><td>Sleep Spindles (N2)</td><td>Thalamo-cortical loops. Spindle density correlates with IQ and next-day learning capacity.</td><td>Plasticity tagging; protecting memories from interference</td><td>Reduced learning efficiency; cognitive aging marker</td></tr>
             <tr><td>Full Sleep Architecture</td><td>Synaptic homeostasis hypothesis (Tononi): sleep globally downscales synaptic strength, pruning weak connections made during waking, optimizing SNR for next day.</td><td>Maintenance of overall memory capacity; prevent synaptic saturation</td><td>Chronic restriction: progressive cognitive decline, emotional dysregulation</td></tr>
@@ -1211,9 +1426,34 @@ a:hover { color: var(--accent-soft); }
       <div class="section">
         <div class="section-title">Reconsolidation: Memory's Achilles Heel</div>
         <div class="prose">A striking discovery in the early 2000s overturned decades of consolidation theory: memories are not stable after their initial consolidation. Each time a memory is reactivated (retrieved), it enters a labile, protein-synthesis-dependent state for 2–6 hours before restabilizing. During this window, the memory can be updated - or disrupted. This is the biological basis for therapy's ability to change the meaning of old experiences, and for why eyewitness testimony is contaminated by post-event questioning.</div>
-        <div class="callout callout-teal">
+        <div class="callout">
           <div class="callout-label">Clinical Implication - PTSD Reconsolidation Therapy</div>
           <p>Experimental protocols combine memory reactivation (showing a trauma cue) with propranolol (noradrenergic blockade) or extinction learning within the 6-hour reconsolidation window. Multiple studies report durable reductions in PTSD symptom severity by disrupting the reconsolidation of fear memories. This represents a potential paradigm shift from managing PTSD symptoms to editing their neural substrate.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Memory Athletes & the Method of Loci</div>
+        <div class="prose">World memory champions can memorize thousands of digits, hundreds of faces, or entire decks of cards in minutes. Maguire et al. (2003) initially reported that memory athletes had structurally different brains - but Dresler et al. (2017) showed with a randomized controlled trial that ordinary people trained in the method of loci (memory palace technique) for 40 days achieved performance indistinguishable from world champions on standard memory tasks, and that brain connectivity changes were detectable after training. The method of loci works because it converts abstract information into spatial and visual representations that exploit the hippocampus's native capacity for spatial encoding. The hippocampus evolved first as a spatial navigation system (place cells, grid cells); its role in episodic memory may be an evolutionary exaptation of this spatial machinery. Memory athletes do not have special brains - they have learned to exploit a system that every human possesses: the brain's extraordinary spatial memory capacity.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">How the Method of Loci Works</div>
+            <ul>
+              <li><span class="li-k">Spatial anchoring</span><span class="li-v">Items to remember are mentally placed at specific locations along a familiar route (your house, your commute)</span></li>
+              <li><span class="li-k">Visual encoding</span><span class="li-v">Items are transformed into vivid, bizarre, or emotionally charged images - the more absurd, the more memorable</span></li>
+              <li><span class="li-k">Retrieval cue</span><span class="li-v">Mentally walking the route triggers spatial retrieval of each item in sequence</span></li>
+              <li><span class="li-k">Neural basis</span><span class="li-v">Activates hippocampal place cells, entorhinal grid cells, and visual imagery networks; recruits the same circuits used for real spatial navigation</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Expert Memory: Domain-Specific vs. General</div>
+            <ul>
+              <li><span class="li-k">Chess masters</span><span class="li-v">Chunk board positions into meaningful patterns (50,000+ chunks); not better memory but better encoding organization</span></li>
+              <li><span class="li-k">Radiologists</span><span class="li-v">Rapid pattern recognition of anomalies in medical images; chunk visual configurations into diagnostic categories</span></li>
+              <li><span class="li-k">Musicians</span><span class="li-v">Enhanced auditory working memory; larger Heschl's gyrus; more efficient auditory cortex encoding</span></li>
+              <li><span class="li-k">London taxi drivers</span><span class="li-v">Enlarged posterior hippocampus from spatial navigation demands; see Chapter VII for details</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1225,7 +1465,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter VII</span>
         <div class="chapter-title">Neuroplasticity &amp; Development</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1200&q=80" alt="DNA helix - genetic and epigenetic foundations" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1635351185069-b930bb38140b?w=1200&q=80" alt="Abstract neural network patterns - synaptic rewiring and neuroplasticity" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Hebbian Learning · Critical Periods · Epigenetics · Adult Neurogenesis</div>
       </div>
@@ -1258,13 +1498,22 @@ a:hover { color: var(--accent-soft); }
         <table class="data-table">
           <thead><tr><th>Mechanism</th><th>Molecular Effect</th><th>Behavioral Relevance</th><th>Reversibility</th></tr></thead>
           <tbody>
-            <tr><td>DNA Methylation</td><td>Methyl groups on cytosines silence promoter regions (e.g., NR3C1 glucocorticoid receptor gene)</td><td>Early-life stress → hypermethylation → reduced GR expression → HPA hyperreactivity for life</td><td>Partially reversible with methyltransferase inhibitors; naturally reversed by maternal licking in rodents</td></tr>
+            <tr><td>DNA Methylation</td><td>Methyl groups on cytosines silence promoter regions (e.g., NR3C1 glucocorticoid receptor gene)</td><td>Early-life stress > hypermethylation > reduced GR expression > HPA hyperreactivity for life</td><td>Partially reversible with methyltransferase inhibitors; naturally reversed by maternal licking in rodents</td></tr>
             <tr><td>Histone Acetylation</td><td>Acetyl groups on histone tails open chromatin structure, enabling transcription</td><td>Learning and memory formation; HDAC inhibitors enhance memory consolidation in rodents</td><td>More dynamic - HDAC inhibitors can reverse stress-induced changes</td></tr>
             <tr><td>Histone Methylation</td><td>Methyl groups on histones - context-dependent activation or repression</td><td>Stress-related behavioral changes; H3K4me3 promotes learning genes; H3K27me3 represses them</td><td>Variable by site; some persistent across cell divisions</td></tr>
             <tr><td>microRNA (miRNA)</td><td>Post-transcriptional regulation - bind 3'UTR, degrade or block translation of target mRNA</td><td>Fine-grained plasticity control; specific miRNAs regulate BDNF, CREB, GluR signaling</td><td>Dynamic - synthesized and degraded in response to activity</td></tr>
             <tr><td>Transgenerational</td><td>Some epigenetic marks survive germline reprogramming and are passed to offspring</td><td>Trauma exposed to parents affects offspring stress reactivity (Holocaust survivor studies, Holocaust mouse studies with acetophenone)</td><td>Unclear; some marks persist 2–3 generations</td></tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title">In Vivo Evidence: The London Taxi Driver Study</div>
+        <div class="prose">Eleanor Maguire's landmark 2000 study compared the brains of London taxi drivers - who spend 2–4 years navigating the city's 25,000 streets to pass "The Knowledge" exam - with matched controls. Taxi drivers had significantly larger posterior hippocampi, and the size correlated with years of navigational experience. Follow-up studies by Woollett and Maguire (2011) scanned trainee taxi drivers before and after training: those who passed the exam showed hippocampal growth; those who failed did not. The anterior hippocampus actually shrank, suggesting a reallocation of hippocampal resources from anterior (encoding new memories) to posterior (spatial representation). This was among the first direct evidence that intensive experience produces structural brain changes in healthy adult humans - not just functional reorganization but measurable gray matter volume change. The hippocampus, it turns out, responds to navigational demands much as a muscle responds to exercise.</div>
+        <div class="callout">
+          <div class="callout-label">Constraint-Induced Movement Therapy: Forcing Plasticity</div>
+          <p>Constraint-induced movement therapy (CIMT) - restraining the unaffected arm of stroke patients and forcing intensive use of the affected arm - produces dramatic motor recovery even in chronic stroke patients previously told they had plateaued. The mechanism: forced use drives massive cortical reorganization, expanding the affected limb's representation in motor and premotor cortex into territory previously occupied by the now-restrained limb. fMRI studies show perilesional activation increases correlating with functional improvement. This works because the brain's competitive plasticity mechanisms (Hebbian learning, synaptic scaling) are always active - they just need the right input pattern to drive reorganization. The broader lesson: the brain changes when you force it to, not merely when you wish it to.</p>
+        </div>
       </div>
 
     </div>
@@ -1275,7 +1524,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter VIII</span>
         <div class="chapter-title">Individual Differences</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80" alt="Diverse group of people - individual differences" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80" alt="Diverse group of people - individual temperament and personality variation" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Temperament · Big Five Neurobiology · Heritability · Sex &amp; Gender</div>
       </div>
@@ -1288,7 +1537,7 @@ a:hover { color: var(--accent-soft); }
             <div class="card-eyebrow">BAS - Behavioral Activation System</div>
             <div class="card-title">Reward Drive</div>
             <div class="card-body"><ul>
-              <li>Neurochemistry: Mesolimbic dopamine tone (VTA→NAc, VTA→PFC)</li>
+              <li>Neurochemistry: Mesolimbic dopamine tone (VTA>NAc, VTA>PFC)</li>
               <li>Trait expression: Reward sensitivity, drive, fun-seeking, impulsivity</li>
               <li>Activated by: Conditioned appetitive stimuli, goal proximity</li>
               <li>High BAS risks: Addiction, mania, hypersexuality, externalizing disorders</li>
@@ -1299,7 +1548,7 @@ a:hover { color: var(--accent-soft); }
             <div class="card-eyebrow">BIS - Behavioral Inhibition System</div>
             <div class="card-title">Threat Vigilance</div>
             <div class="card-body"><ul>
-              <li>Neurochemistry: Serotonergic (raphe→amygdala, raphe→PFC)</li>
+              <li>Neurochemistry: Serotonergic (raphe>amygdala, raphe>PFC)</li>
               <li>Trait expression: Anxiety, harm avoidance, caution, rumination</li>
               <li>Activated by: Goal conflict, novelty, conditioned threat stimuli</li>
               <li>High BIS risks: Anxiety disorders, OCD, social phobia, depression</li>
@@ -1342,7 +1591,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter IX</span>
         <div class="chapter-title">Stress &amp; Allostasis</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200&q=80" alt="Storm clouds - stress and pressure" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1504253163759-c23fccaebb55?w=1200&q=80" alt="Eroding coastline - allostatic load and chronic stress wear" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Acute Response · Allostatic Load · Chronic Pathology · Resilience Mechanisms</div>
       </div>
@@ -1364,7 +1613,7 @@ a:hover { color: var(--accent-soft); }
           <div class="col-pane">
             <div class="col-pane-title">Slow Route: HPA Axis (minutes)</div>
             <ul>
-              <li><span class="li-k">Pathway</span><span class="li-v">Hypothalamus → pituitary → adrenal cortex (see Chapter II)</span></li>
+              <li><span class="li-k">Pathway</span><span class="li-v">Hypothalamus > pituitary > adrenal cortex (see Chapter II)</span></li>
               <li><span class="li-k">Mediators</span><span class="li-v">Cortisol (primary GC in humans)</span></li>
               <li><span class="li-k">Time course</span><span class="li-v">Peak 20–45 min; biological half-life 60–90 minutes</span></li>
               <li><span class="li-k">Effects</span><span class="li-v">Gluconeogenesis, immune suppression, anti-inflammatory</span></li>
@@ -1386,9 +1635,34 @@ a:hover { color: var(--accent-soft); }
             <tr><td>White Matter</td><td>Reduced fractional anisotropy in PFC-amygdala, PFC-striatum tracts</td><td>Slowed top-down inhibitory signal; impaired emotional regulation speed</td><td>Behavioral inflexibility; sustained emotional reactions</td></tr>
           </tbody>
         </table>
-        <div class="callout callout-gold">
+        <div class="callout">
           <div class="callout-label">Allostatic Load: The Wear-and-Tear Concept</div>
           <p>McEwen and Stellar introduced "allostatic load" to capture the cumulative physiological cost of chronic stress adaptation. High allostatic load - measured through cortisol patterns, blood pressure variability, inflammatory markers, and metabolic indicators - predicts accelerated cognitive aging, cardiovascular disease, and reduced life expectancy independent of traditional risk factors.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Burnout: When Allostatic Systems Collapse</div>
+        <div class="prose">Burnout - characterized by emotional exhaustion, depersonalization, and reduced personal accomplishment - is not simply "being tired." Neuroimaging studies of burned-out professionals reveal a distinctive neural signature: reduced caudate nucleus activation during reward processing (blunted reward sensitivity), elevated amygdala reactivity to emotional stimuli (hypervigilance without the protective cortisol response that normally modulates it), and disrupted PFC-amygdala connectivity (impaired top-down emotional regulation). Critically, burned-out individuals show a flattened cortisol awakening response - the opposite pattern from early-stage chronic stress. This suggests that burnout represents not an excess of stress hormones but an exhaustion of the stress response system itself: the HPA axis has downregulated, the alarm bells have stopped ringing, but the underlying allostatic load remains. The result is a state of emotional numbness and cognitive disengagement that mimics depression but has a distinct neural and hormonal profile.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Burnout vs. Depression: Neural Distinctions</div>
+            <ul>
+              <li><span class="li-k">Cortisol pattern</span><span class="li-v">Burnout: blunted cortisol awakening response. Depression: variable; often elevated evening cortisol.</span></li>
+              <li><span class="li-k">Reward circuitry</span><span class="li-v">Burnout: blunted NAc/striatum activation. Depression: anhedonia but with elevated resting-state DMN rumination.</span></li>
+              <li><span class="li-k">Inflammatory markers</span><span class="li-v">Burnout: moderate elevation (IL-6). Depression: higher and more variable; correlated with treatment resistance.</span></li>
+              <li><span class="li-k">Recovery trajectory</span><span class="li-v">Burnout: often resolves with environmental change and rest. Depression: typically requires treatment intervention.</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Vagal Tone & Resilience</div>
+            <ul>
+              <li><span class="li-k">Heart rate variability (HRV)</span><span class="li-v">Higher HRV reflects stronger vagal brake; predicts faster stress recovery and better emotional regulation</span></li>
+              <li><span class="li-k">Polyvagal theory (Porges)</span><span class="li-v">Three hierarchical responses: social engagement (ventral vagal), fight/flight (sympathetic), freeze/collapse (dorsal vagal)</span></li>
+              <li><span class="li-k">Vagal tone training</span><span class="li-v">Slow breathing (6 breaths/min), meditation, cold exposure increase vagal tone; biofeedback effective for anxiety</span></li>
+              <li><span class="li-k">Clinical relevance</span><span class="li-v">Low HRV is a transdiagnostic risk factor for depression, anxiety, PTSD, and cardiovascular disease</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1400,7 +1674,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter X</span>
         <div class="chapter-title">Psychopathology Mechanisms</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80" alt="Dark corridor - the complexity of mental illness" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1516382799247-87df95d790b7?w=1200&q=80" alt="Shattered mirror reflections - fragmented psyche and psychopathology" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Mood Disorders · Anxiety · Addiction · Psychosis · Neurodevelopmental Conditions</div>
       </div>
@@ -1418,12 +1692,12 @@ a:hover { color: var(--accent-soft); }
           <div class="card">
             <div class="card-eyebrow">Neuroplasticity Hypothesis</div>
             <div class="card-title">Impaired Synaptic Growth</div>
-            <div class="card-body">Chronic stress → ↓ BDNF → hippocampal atrophy → depression. Antidepressants, exercise, and ketamine all increase BDNF. Ketamine works within hours by triggering AMPA receptor-mediated mTOR activation → rapid synaptogenesis in PFC. This explains its speed vs. SSRIs.</div>
+            <div class="card-body">Chronic stress > ↓ BDNF > hippocampal atrophy > depression. Antidepressants, exercise, and ketamine all increase BDNF. Ketamine works within hours by triggering AMPA receptor-mediated mTOR activation > rapid synaptogenesis in PFC. This explains its speed vs. SSRIs.</div>
           </div>
           <div class="card">
             <div class="card-eyebrow">Network Hypothesis</div>
             <div class="card-title">Default Mode Hyperactivity</div>
-            <div class="card-body">Excessive DMN activity during rest → self-referential rumination. Reduced anti-correlation between DMN and task-positive networks. Effective antidepressants normalize DMN connectivity. ECT produces the most dramatic DMN normalization of any treatment.</div>
+            <div class="card-body">Excessive DMN activity during rest > self-referential rumination. Reduced anti-correlation between DMN and task-positive networks. Effective antidepressants normalize DMN connectivity. ECT produces the most dramatic DMN normalization of any treatment.</div>
           </div>
           <div class="card">
             <div class="card-eyebrow">Neuroimmune Hypothesis</div>
@@ -1436,7 +1710,7 @@ a:hover { color: var(--accent-soft); }
       <div class="section">
         <div class="section-title">Addiction: A Three-Stage Cycle</div>
         <div class="step-list">
-          <div class="step-item"><div class="step-num">01</div><div class="step-body"><div class="step-title">Binge / Intoxication</div><div class="step-desc">Drug directly activates mesolimbic DA (or mimics it). Ventral striatum (NAc) codes massive, unearned reward prediction error. No CS needed initially. Neural circuit: VTA → NAc → VP. All addictive drugs share the property of elevating synaptic DA in NAc, directly or indirectly, by 2–10 fold above baseline.</div></div></div>
+          <div class="step-item"><div class="step-num">01</div><div class="step-body"><div class="step-title">Binge / Intoxication</div><div class="step-desc">Drug directly activates mesolimbic DA (or mimics it). Ventral striatum (NAc) codes massive, unearned reward prediction error. No CS needed initially. Neural circuit: VTA > NAc > VP. All addictive drugs share the property of elevating synaptic DA in NAc, directly or indirectly, by 2–10 fold above baseline.</div></div></div>
           <div class="step-item"><div class="step-num">02</div><div class="step-body"><div class="step-title">Withdrawal / Negative Affect</div><div class="step-desc">Between uses, extended amygdala (CeA, BNST) becomes hyperactive. Recruitment of CRH, dynorphin (κ-opioid) circuits produces dysphoria, anxiety, and irritability. Critically: the baseline hedonic set-point drops - natural rewards become less pleasurable (reward allostasis). Drug use shifts from seeking pleasure to escaping distress.</div></div></div>
           <div class="step-item"><div class="step-num">03</div><div class="step-body"><div class="step-title">Preoccupation / Anticipation (Craving)</div><div class="step-desc">Drug-associated cues (contexts, people, objects) activate dorsal striatum (habit circuits) and prefrontal craving networks. Cue-induced craving can persist for years after abstinence - this is why relapse rates are high long after withdrawal resolves. PFC-based impulse control is simultaneously weakened (hypofrontality), creating a double vulnerability: amplified craving + impaired control.</div></div></div>
         </div>
@@ -1447,6 +1721,26 @@ a:hover { color: var(--accent-soft); }
         <div class="prose">Kapur's influential reformulation proposes that psychosis is not fundamentally about hallucinations and delusions as symptoms, but about a prior breakdown in the <em>regulation of salience</em>. Dysregulated mesolimbic dopamine causes neutral stimuli and internal states to acquire inappropriate significance - they become "loaded with meaning." The patient's psychotic symptoms (delusions, hallucinations) are then the cognitive system's rational attempt to explain these aberrant experiences. This account explains why antipsychotics (D2 blockers) reduce positive symptoms without directly affecting the experience of hallucinations, but rather reduce the compelling sense of meaning attached to them.</div>
       </div>
 
+      <div class="section">
+        <div class="section-title">ADHD: A Disorder of Temporal Discounting and Arousal Regulation</div>
+        <div class="prose">ADHD is not a disorder of attention deficit but of attention regulation - the brain's inability to allocate attention in proportion to the temporal distance and motivational significance of goals. The core deficit is excessive temporal discounting: ADHD brains devalue future rewards more steeply than neurotypical brains, making immediate stimuli overwhelmingly compelling relative to delayed outcomes. Neurally, this involves reduced prefrontal dopaminergic tone (impaired top-down regulation), elevated mesolimbic reactivity to immediate reward, and altered noradrenergic arousal regulation (the LC operates at a suboptimal tonic level, producing chronic underarousal that the individual compensates for through stimulation-seeking). Stimulant medications (methylphenidate, amphetamine) work not by calming hyperactive children but by increasing synaptic dopamine and noradrenaline in PFC circuits, improving the signal-to-noise ratio and enabling sustained goal-directed attention. Paradoxically, the same medication that "calms" ADHD patients produces euphoria and restlessness in neurotypical brains - a pharmacological confirmation that the ADHD brain operates in a fundamentally different dopaminergic regime.</div>
+        <div class="fact-grid">
+          <div class="fact-cell"><div class="fact-val">5–7%</div><div class="fact-lab">Global childhood prevalence</div></div>
+          <div class="fact-cell"><div class="fact-val">2.5–5%</div><div class="fact-lab">Adult prevalence (60% childhood cases persist)</div></div>
+          <div class="fact-cell"><div class="fact-val">~75%</div><div class="fact-lab">Heritability (higher than most psychiatric disorders)</div></div>
+          <div class="fact-cell"><div class="fact-val">~0.5 hr</div><div class="fact-lab">Delay in cortical maturation vs. neurotypical (5 yr peak)</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Autism Spectrum: Predictive Coding and Sensory Worlds</div>
+        <div class="prose">Autism spectrum conditions (ASC) are increasingly understood through the predictive processing framework. The "weak central coherence" and "enhanced perceptual functioning" theories converge on a picture of attenuated top-down priors: the autistic brain weights sensory prediction errors more heavily than the generative model's predictions. This produces a perceptual world dominated by raw sensory detail rather than high-level interpretation - the autistic individual experiences a flood of sensory information that neurotypical brains automatically filter and smooth. This accounts for both the characteristic strengths (exceptional pattern detection, attention to detail, systemizing) and difficulties (sensory overload, social cognition challenges, need for predictability) of autism. Social interaction, in this view, is not inherently impaired - it is disproportionately demanding because the rapid, implicit, context-dependent social signals require strong predictive models to parse efficiently. When the priors are weak, every social interaction becomes an intensive bottom-up computation rather than a fluent top-down recognition.</div>
+        <div class="callout">
+          <div class="callout-label">The Double Empathy Problem</div>
+          <p>Milton's double empathy problem (2012) challenges the assumption that autistic social difficulties reflect a unilateral deficit. Studies by Sheppard et al. (2016) and Crompton et al. (2020) show that communication breakdown between autistic and non-autistic people is bidirectional: neurotypical individuals are equally poor at reading autistic individuals as autistic individuals are at reading neurotypicals. Autistic-to-autistic communication, however, is as efficient as neurotypical-to-neurotypical communication. This suggests the "deficit" is not located in the autistic individual alone but in the mismatch between two different cognitive styles - a perspective that reframes autism from a disorder of social cognition to a difference in cognitive processing that creates friction at the interface with the neurotypical majority.</p>
+        </div>
+      </div>
+
     </div>
 
     <div class="chapter-ornament">✦ · ✦ · ✦</div>
@@ -1455,7 +1749,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XI</span>
         <div class="chapter-title">Emotion &amp; Motivation</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1516900448138-898720b936c7?w=1200&q=80" alt="Expressive light patterns - emotion and motivation" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200&q=80" alt="Moody light through clouds - affective charge and emotional depth" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Affective Neuroscience · Basic Emotions · Appraisal Theory · The Self-Determination Framework</div>
       </div>
@@ -1466,9 +1760,9 @@ a:hover { color: var(--accent-soft); }
         <table class="data-table">
           <thead><tr><th>Primary Emotion System</th><th>Neural Substrate</th><th>Neurochemistry</th><th>Function</th><th>Dysregulation</th></tr></thead>
           <tbody>
-            <tr><td>SEEKING (Expectancy)</td><td>VTA → NAc → lateral hypothalamus → PFC</td><td>Dopamine (primary), glutamate</td><td>Motivational drive to explore, acquire, anticipate; the engine of all motivated behavior</td><td>Depression (hypoactive SEEKING); mania/psychosis (hyperactive)</td></tr>
-            <tr><td>FEAR</td><td>Amygdala → PAG → hypothalamus</td><td>Glutamate, CRH, noradrenaline</td><td>Threat detection and avoidance; freezing, flight, passive avoidance</td><td>Anxiety disorders, phobias, PTSD</td></tr>
-            <tr><td>RAGE</td><td>Medial amygdala → BNST → PAG</td><td>Substance P, testosterone, ↓ serotonin</td><td>Response to physical or social frustration; territorial defense</td><td>Impulsive aggression; intermittent explosive disorder</td></tr>
+            <tr><td>SEEKING (Expectancy)</td><td>VTA > NAc > lateral hypothalamus > PFC</td><td>Dopamine (primary), glutamate</td><td>Motivational drive to explore, acquire, anticipate; the engine of all motivated behavior</td><td>Depression (hypoactive SEEKING); mania/psychosis (hyperactive)</td></tr>
+            <tr><td>FEAR</td><td>Amygdala > PAG > hypothalamus</td><td>Glutamate, CRH, noradrenaline</td><td>Threat detection and avoidance; freezing, flight, passive avoidance</td><td>Anxiety disorders, phobias, PTSD</td></tr>
+            <tr><td>RAGE</td><td>Medial amygdala > BNST > PAG</td><td>Substance P, testosterone, ↓ serotonin</td><td>Response to physical or social frustration; territorial defense</td><td>Impulsive aggression; intermittent explosive disorder</td></tr>
             <tr><td>LUST (Sexual Drive)</td><td>BNST, medial preoptic area, VMH</td><td>Sex steroids, oxytocin, vasopressin</td><td>Sexual motivation, pair bonding, reproduction</td><td>Hypersexuality; sexual dysfunction</td></tr>
             <tr><td>CARE (Nurturance)</td><td>MPOA, anterior hypothalamus, VTA</td><td>Oxytocin, prolactin, opioids</td><td>Maternal / caregiving behavior; social attachment formation</td><td>Attachment disorders; neglect</td></tr>
             <tr><td>PANIC / GRIEF</td><td>ACC, BNST, PAG, thalamus</td><td>Opioids (low state), CRH, oxytocin (consolation)</td><td>Separation distress; social bonding maintenance through loss signals</td><td>Separation anxiety; social pain; grief pathology</td></tr>
@@ -1480,9 +1774,34 @@ a:hover { color: var(--accent-soft); }
       <div class="section">
         <div class="section-title">Motivation: Self-Determination Theory (Neural Perspective)</div>
         <div class="prose">Deci and Ryan's Self-Determination Theory identifies three universal psychological needs - autonomy, competence, and relatedness - whose satisfaction predicts wellbeing across cultures. Neurally, these map onto distinct circuits: autonomy onto PFC-striatum voluntary action circuits; competence onto dorsal striatum skill acquisition and prediction error systems; relatedness onto the social reward and oxytocin/opioid affiliation circuitry.</div>
-        <div class="callout callout-teal">
+        <div class="callout">
           <div class="callout-label">Intrinsic vs. Extrinsic Motivation: The Undermining Effect</div>
           <p>When people are paid for activities they intrinsically enjoy, intrinsic motivation decreases (Deci, 1971). The neural mechanism: external rewards shift activity from the ventromedial PFC (intrinsic valuation) to the caudate nucleus (contingency tracking). The activity loses its "self-expressive" quality and becomes an instrumental transaction. This has profound implications for education, management, and therapy design.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Emotion Construction: From James-Lange to Predictive Interoception</div>
+        <div class="prose">William James proposed in 1884 that emotions are the brain's perception of bodily changes - we do not run from a bear because we are afraid; we are afraid because we run. This radical inversion was largely abandoned in the 20th century in favor of appraisal theories (Lazarus, Schachter-Singer) that restored cognition's priority. But modern interoceptive neuroscience has revived a refined version of James' insight. Lisa Feldman Barrett's constructed emotion theory proposes that emotions are not triggered by dedicated circuits but are constructed in the moment by the brain's predictive model combining interoceptive signals (heart rate, gut state, respiration), prior concepts ("this feeling pattern = anger"), and current context. The same physiological arousal pattern (elevated heart rate, sweating, narrowed attention) can be constructed as anger, fear, excitement, or sexual arousal depending on the contextual concept applied. This explains why emotion concepts are culturally variable - the Tahitian language has no word for sadness, and the German "Schadenfreude" has no English equivalent - yet the underlying interoceptive signals are universal.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Theories of Emotion Generation</div>
+            <ul>
+              <li><span class="li-k">James-Lange (1884)</span><span class="li-v">Bodily changes cause emotional experience; no body, no emotion</span></li>
+              <li><span class="li-k">Cannon-Bard (1927)</span><span class="li-v">Thalamus simultaneously activates body and cortex; emotion and arousal are parallel, not sequential</span></li>
+              <li><span class="li-k">Schachter-Singer (1962)</span><span class="li-v">Emotion = undifferentiated arousal + cognitive label; same arousal, different emotion depending on attribution</span></li>
+              <li><span class="li-k">Constructed emotion (Barrett, 2017)</span><span class="li-v">Emotion is prediction: interoceptive model + concept + context; no dedicated emotion circuits</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Pain & Emotion: Shared Neural Architecture</div>
+            <ul>
+              <li><span class="li-k">Shared substrates</span><span class="li-v">Social pain (rejection, exclusion) activates dorsal ACC and anterior insula - the same regions activated by physical pain</span></li>
+              <li><span class="li-k">Acetaminophen studies</span><span class="li-v">Tylenol reduces both physical pain sensitivity and emotional responses to social rejection (DeWall et al., 2010)</span></li>
+              <li><span class="li-k">Cognitive modulation</span><span class="li-v">Placebo analgesia activates endogenous opioid system; the pain signal is real but modulated by expectation</span></li>
+              <li><span class="li-k">Chronic pain</span><span class="li-v">Persistent pain reorganizes cortical maps; phantom limb pain is a prediction error in the body schema</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1494,7 +1813,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XII</span>
         <div class="chapter-title">Social Cognition &amp; the Social Brain</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80" alt="People connecting - social cognition" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1200&q=80" alt="Crowd of people with overlapping reflections - social cognition and theory of mind" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Theory of Mind · Mirror Systems · Cooperation · Moral Cognition</div>
       </div>
@@ -1518,9 +1837,31 @@ a:hover { color: var(--accent-soft); }
       <div class="section">
         <div class="section-title">Moral Cognition: Emotion vs. Reason</div>
         <div class="prose">Joshua Greene's dual-process account of moral judgment proposes that personal moral dilemmas (trolley problems, footbridge scenarios) pit emotional/automatic processes (amygdala, mPFC) against utilitarian/deliberative processes (dlPFC, ACC). When cognitive load disrupts System 2, people become more deontological - they refuse to push the person off the footbridge even when utilitarian calculus favors it. Patients with vmPFC damage show the opposite: coldly utilitarian judgments, willing to harm one to save five, because the somatic alarm signal is absent.</div>
-        <div class="callout callout-plum">
+        <div class="callout">
           <div class="callout-label">The Somatic Marker in Moral Decisions</div>
           <p>Damasio's vmPFC patients are not cognitively impaired - they score normally on abstract moral reasoning tasks. Their deficit emerges only when the moral scenario involves <em>real personal harm to real people</em>. The missing component is the gut-level anticipatory signal: the visceral "wrongness" that normally constrains utilitarian reasoning. This suggests moral behavior depends on integrated somatic feedback, not pure reason.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Dunbar's Number: The Cognitive Limit on Social Groups</div>
+        <div class="prose">Robin Dunbar observed a correlation between neocortex ratio and social group size across primate species: larger neocortices support larger social networks. Extrapolating to humans, the predicted group size is approximately 150 - the "Dunbar number." This is not a hard limit but a modal value: it represents the number of individuals with whom a person can maintain stable social relationships (relationships requiring knowledge of who each person is and how they relate to everyone else). Neurally, maintaining this social model recruits the mentalizing network (mPFC, TPJ, STS, temporal poles) and places heavy demands on working memory and episodic memory. The number 150 appears repeatedly in human organizations: the average size of Neolithic farming villages, Roman military units (the century), Hutterite communities that split when they exceed 150, and the maximum size of companies before middle management becomes necessary. Social media does not expand Dunbar's number - it expands the number of weak ties and parasocial relationships, but the core circle of emotionally invested relationships remains at 3–5 (support clique), 12–15 (sympathy group), and ~150 (active network).</div>
+        <div class="fact-grid">
+          <div class="fact-cell"><div class="fact-val">~5</div><div class="fact-lab">Support clique (intimate confidants)</div></div>
+          <div class="fact-cell"><div class="fact-val">~15</div><div class="fact-lab">Sympathy group (close friends)</div></div>
+          <div class="fact-cell"><div class="fact-val">~50</div><div class="fact-lab">Close network (regular contact)</div></div>
+          <div class="fact-cell"><div class="fact-val">~150</div><div class="fact-lab">Dunbar's number (stable relationships)</div></div>
+          <div class="fact-cell"><div class="fact-val">~500</div><div class="fact-lab">Acquaintances (can recognize face and name)</div></div>
+          <div class="fact-cell"><div class="fact-val">~1500</div><div class="fact-lab">Faces you can put a name to</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Mirror Neurons: Discovery, Hype, and Reality</div>
+        <div class="prose">Mirror neurons - discovered by Rizzolatti's group in macaque premotor cortex (area F5) in the 1990s - fire both when an animal performs an action and when it observes the same action performed by another. This discovery generated enormous excitement as a potential mechanism for empathy, language evolution, theory of mind, and even autism. The reality is more nuanced. Human mirror neuron evidence comes primarily from EEG mu-suppression studies and fMRI adaptation, both of which are indirect. The original "mirror neuron theory of everything" has been substantially revised: mirror neurons do not provide a direct readout of others' intentions (they respond to observed actions, not inferred goals), they are modulated by context and attention, and their proposed role in autism (the "broken mirror" theory) has been largely refuted by meta-analyses showing inconsistent evidence. The current consensus: mirror mechanisms contribute to action understanding and may facilitate social learning, but they are one component of a much larger social cognition system, not its foundation.</div>
+        <div class="callout">
+          <div class="callout-label">Empathy: Simulation vs. Theory-Theory</div>
+          <p>The debate between simulation theory (we understand others by simulating their states in our own brain) and theory-theory (we understand others through abstract theoretical knowledge) mirrors the mirror neuron controversy. The modern synthesis is that both mechanisms operate: direct simulation (via shared representations in anterior insula and ACC) provides fast, automatic emotional resonance, while mentalizing networks (mPFC, TPJ) provide slower, more accurate belief attribution. Empathy requires both - simulation without theory is contagious distress (feeling another's pain without understanding why); theory without simulation is cold cognition (understanding but not caring). Optimal empathy is the integration of both systems.</p>
         </div>
       </div>
 
@@ -1532,14 +1873,14 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XIII</span>
         <div class="chapter-title">Sleep &amp; Circadian Biology</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1200&q=80" alt="Night sky and stars - circadian rhythms and sleep" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=1200&q=80" alt="Nocturnal cityscape with reflections - circadian rhythms and sleep architecture" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Architecture of Sleep · Circadian Clocks · Sleep Debt · Chronobiology</div>
       </div>
 
       <div class="section">
         <div class="section-title">Sleep Architecture</div>
-        <div class="prose">A full night's sleep consists of 4–6 cycles of approximately 90 minutes each, moving through NREM stages (N1→N2→N3/SWS) before ascending into REM. The distribution is not uniform: early cycles are SWS-dominant (memory consolidation, physical restoration); late cycles are REM-dominant (emotional processing, creativity). Disrupting either half impairs a different suite of cognitive functions.</div>
+        <div class="prose">A full night's sleep consists of 4–6 cycles of approximately 90 minutes each, moving through NREM stages (N1>N2>N3/SWS) before ascending into REM. The distribution is not uniform: early cycles are SWS-dominant (memory consolidation, physical restoration); late cycles are REM-dominant (emotional processing, creativity). Disrupting either half impairs a different suite of cognitive functions.</div>
         <div class="fact-grid">
           <div class="fact-cell"><div class="fact-val">90 min</div><div class="fact-lab">Average NREM-REM cycle length</div></div>
           <div class="fact-cell"><div class="fact-val">4–6</div><div class="fact-lab">Cycles per night (7–9 hr sleep)</div></div>
@@ -1567,10 +1908,19 @@ a:hover { color: var(--accent-soft); }
             <ul>
               <li><span class="li-k">Mechanism</span><span class="li-v">Suprachiasmatic nucleus (SCN) oscillation; CLOCK/BMAL1/PER/CRY transcription loops (~24h)</span></li>
               <li><span class="li-k">Entrainment</span><span class="li-v">Light (dominant) via melanopsin ipRGCs; also temperature, food, exercise</span></li>
-              <li><span class="li-k">Melatonin</span><span class="li-v">Pineal; rises 2h before habitual sleep time; signals darkness; low amplitude in adolescents → delayed phase</span></li>
+              <li><span class="li-k">Melatonin</span><span class="li-v">Pineal; rises 2h before habitual sleep time; signals darkness; low amplitude in adolescents > delayed phase</span></li>
               <li><span class="li-k">Jetlag</span><span class="li-v">SCN realigns at ~1h/day westward, ~0.5h/day eastward - asymmetry of realignment</span></li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Social Jet Lag & Chronotype</div>
+        <div class="prose">Most people live against their biological clock. "Social jet lag" - the discrepancy between the body's endogenous circadian rhythm and the socially imposed schedule - affects an estimated 87% of the population. The typical pattern: biological chronotype (genetically determined, ~50% heritable via PER3, CLOCK, and other clock genes) determines optimal sleep timing, while work/school schedules demand conformity to a socially constructed time. A person with a late chronotype forced to wake at 6 AM experiences a circadian misalignment equivalent to crossing 2-3 time zones every day. The consequences are not trivial: chronic social jet lag is associated with increased BMI, higher rates of depression, impaired glucose metabolism, and elevated cardiovascular risk - independent of total sleep duration. Roenneberg's research shows that social jet lag correlates more strongly with health outcomes than total sleep time, suggesting that when you sleep may matter as much as how long. The adolescent phase delay (melatonin onset shifts 1-2 hours later during puberty) explains why teenagers are not simply being defiant when they cannot fall asleep before midnight - their biology has shifted, and early school start times force them into chronic circadian misalignment.</div>
+        <div class="callout">
+          <div class="callout-label">Chronotype Distribution: You Cannot Choose Your Clock</div>
+          <p>Chronotype (morning lark vs. night owl) is approximately normally distributed with a slight skew toward eveningness. It is ~50% heritable and shifts across the lifespan: children are naturally early chronotypes, adolescents shift dramatically late (peak eveningness at ~20), and older adults gradually shift back toward morningness. Forcing a night owl to function on a lark schedule produces measurable cognitive impairment equivalent to 3 hours of sleep deprivation. The social cost of eveningness is real: late chronotypes have higher rates of depression, ADHD, and substance use, partly because a morning-biased society imposes chronic circadian misalignment on 20-25% of the population whose biology is simply different.</p>
         </div>
       </div>
 
@@ -1582,9 +1932,25 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XIV</span>
         <div class="chapter-title">Consciousness &amp; Attention</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&q=80" alt="Galaxy and cosmos - the mystery of consciousness" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80" alt="Deep nebula formation - the emergent mystery of consciousness" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Global Workspace Theory · Integrated Information · Neural Correlates of Consciousness</div>
+      </div>
+      <div class="chapter-lede">Consciousness remains the hardest problem in science - not because we lack data, but because explaining how subjective experience arises from objective neural processes requires bridging what philosophers call the explanatory gap. The brain generates roughly 10^16 synaptic events per second, yet only a thin slice of this computation is accompanied by the felt quality of experience. Understanding which neural operations cross the threshold into consciousness, and why, is the central question of this chapter.</div>
+
+      <div class="section">
+        <div class="section-title">The Neural Correlates of Consciousness (NCC)</div>
+        <div class="prose">The search for NCCs follows a logic of contrast: present the same physical stimulus but manipulate conscious awareness (via masking, binocular rivalry, inattentional blindness, or anesthesia) and identify which neural activity tracks awareness rather than stimulation. Koch and Crisci's "minimal NCC" - the smallest set of neural mechanisms sufficient for a specific conscious percept - points toward recurrent processing in posterior cortical regions (parietal, temporal, occipital) rather than frontal areas, which may be necessary for report but not for experience itself.</div>
+        <table class="data-table">
+          <thead><tr><th>Paradigm</th><th>Manipulation</th><th>Neural Finding</th><th>Implication</th></tr></thead>
+          <tbody>
+            <tr><td>Visual Masking</td><td>Stimulus presented then masked; subject unaware of stimulus</td><td>V1/V2 activity present but recurrent feedback from higher areas absent; no P3b wave</td><td>Feedforward processing alone is insufficient for consciousness</td></tr>
+            <tr><td>Binocular Rivalry</td><td>Different images to each eye; one dominates awareness at a time</td><td>Neural activity tracks subjective percept, not physical stimulus, from V4/V8 onward</td><td>Consciousness dissociates from retinal input at mid-level visual cortex</td></tr>
+            <tr><td>Inattentional Blindness</td><td>Full-field stimulus presented during attentional capture by another task</td><td>V1 responds normally; higher ventral stream activation absent; no P3b</td><td>Attention is necessary but possibly not sufficient for visual awareness</td></tr>
+            <tr><td>Anesthesia (Propofol)</td><td>Progressive loss of consciousness under GABA-A potentiation</td><td>Loss of frontoparietal connectivity; preserved local cortical activity; thalamocortical fragmentation</td><td>Consciousness requires integrated thalamocortical communication, not local activity</td></tr>
+            <tr><td>Blindsight</td><td>V1 lesion; patient denies seeing stimuli in blind field</td><td>Subcortical pathways (superior colliculus > pulvinar > MT) drive residual behavior</td><td>Visual processing and visual consciousness are dissociable</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="section">
@@ -1608,6 +1974,75 @@ a:hover { color: var(--accent-soft); }
         </div>
       </div>
 
+      <div class="section">
+        <div class="section-title">The Binding Problem & Temporal Synchrony</div>
+        <div class="prose">The brain processes color, shape, motion, and sound in anatomically separate cortical areas. Yet conscious experience is unified - the redness of a rose, its shape, its movement, and the sound of wind through it arrive as a single, integrated percept. How does the brain bind these distributed features into a coherent experience? The dominant hypothesis involves temporal synchrony: neurons encoding features of the same object fire in phase-locking synchrony (particularly in the gamma range, 30–80 Hz), while neurons encoding different objects fire asynchronously. This neural "handshake" provides a mechanism for segmentation without a central binding site.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Gamma Synchrony Hypothesis</div>
+            <ul>
+              <li><span class="li-k">Mechanism</span><span class="li-v">PV+ interneuron networks generate gamma oscillations (30–80 Hz) that coordinate the timing of pyramidal cell firing across regions</span></li>
+              <li><span class="li-k">Evidence</span><span class="li-v">Gamma coherence between V1 and V4 increases when features are bound to one object; disrupted during anesthesia</span></li>
+              <li><span class="li-k">Problems</span><span class="li-v">Phase lag across long distances; may be more epiphenomenal than causal; TMS disruption of gamma does not always abolish binding</span></li>
+              <li><span class="li-k">Current status</span><span class="li-v">Necessary for attention and working memory maintenance; possibly sufficient for binding in local circuits; unlikely to be the full story for global binding</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Alternative Binding Mechanisms</div>
+            <ul>
+              <li><span class="li-k">Feedforward convergence</span><span class="li-v">Higher-level neurons with large receptive fields integrate features from lower areas; object identity neurons in IT cortex</span></li>
+              <li><span class="li-k">Re-entrant processing</span><span class="li-v">Top-down feedback loops from PFC to sensory areas; may "select" which features are bound by modulating gain</span></li>
+              <li><span class="li-k">Neural assembly theory</span><span class="li-v">Hebb's "cell assemblies" - neurons that fire together wire together; transient coalitions of neurons represent unified percepts</span></li>
+              <li><span class="li-k">Dynamic core hypothesis</span><span class="li-v">Tononi and Edelman: consciousness requires a "dynamic core" of interacting thalamocortical reentrant loops, not a single binding frequency</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Altered States of Consciousness</div>
+        <div class="prose">Consciousness is not binary but graded, and its character can be dramatically altered by pharmacology, meditation, sensory deprivation, or pathology. Examining these altered states reveals which features of normal consciousness are essential and which are incidental. A common thread across psychedelic states, deep meditation, and dream sleep is a loosening of the brain's normally tight grip on its predictive model - increased neural entropy, reduced top-down priors, and a corresponding expansion of experiential content.</div>
+        <table class="data-table">
+          <thead><tr><th>State</th><th>Neural Signature</th><th>Subjective Character</th><th>Mechanism</th></tr></thead>
+          <tbody>
+            <tr><td>Psychedelic (Psilocybin/LSD)</td><td>↓ DMN integrity; ↑ global functional connectivity; ↑ neural entropy; ↑ thalamocortical noise</td><td>Ego dissolution, visual distortions, synesthesia, mystical experience, time distortion</td><td>5-HT2A agonism on layer V pyramidal neurons > disrupts thalamic gating > sensory flooding</td></tr>
+            <tr><td>Deep Meditation (Advanced)</td><td>↓↓ DMN activity; ↑ gamma synchrony (especially 25–42 Hz sustained); ↑ PFC-insula coupling</td><td>Pure awareness without content ("contentless consciousness"); selflessness; temporal dissolution</td><td>Top-down PFC regulation suppressing default mode; enhanced meta-awareness without narrative</td></tr>
+            <tr><td>REM Dreaming</td><td>Visual cortex active (but disconnected from input); limbic activation; PFC largely offline</td><td>Vivid hallucinations; uncritical acceptance of bizarre content; emotional intensity; amnesia on waking</td><td>Ponto-geniculo-occipital (PGO) waves activate visual cortex; cholinergic drive; PFC deactivation removes reality monitoring</td></tr>
+            <tr><td>General Anesthesia</td><td>Thalamocortical fragmentation; ↓ frontoparietal connectivity; preserved local oscillations</td><td>Complete absence of experience; not "dreaming" - genuinely nothing</td><td>GABA-A potentiation (propofol) or NMDA blockade (ketamine) disrupts cortical integration</td></tr>
+            <tr><td>Coma / Vegetative State</td><td>Widespread cortical deactivation; disrupted thalamocortical loops; preserved brainstem</td><td>No reportable experience; some vegetative patients show "covert consciousness" on fMRI command-following</td><td>Structural or metabolic disruption of arousal and integration systems</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <div class="callout-label">The Hard Problem: Why It Hasn't Been Solved</div>
+          <p>David Chalmers' distinction between "easy problems" (explaining how the brain discriminates stimuli, integrates information, controls behavior) and the "hard problem" (explaining why any physical processing is accompanied by subjective experience at all) remains unresolved. Every theory of consciousness addresses the easy problems to varying degrees; none has provided a convincing account of why a particular arrangement of neurons should feel like something. This is not a failure of neuroscience - it may be a feature of the problem itself. As Thomas Nagel argued, the subjective character of experience may resist reduction to objective description in principle.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Change Blindness & the Illusion of Rich Experience</div>
+        <div class="prose">One of the most unsettling findings in consciousness research is change blindness: people routinely fail to detect large, obvious changes in their visual field when the change coincides with a brief disruption (a blink, saccade, flicker, or cut in a film). In Simons and Chabris' famous "invisible gorilla" experiment, 50% of participants counting basketball passes failed to notice a person in a gorilla suit walking through the scene, stopping, and beating their chest. This demonstrates that conscious visual experience is far sparser than it feels - the subjective sense of seeing "everything" in front of you is an illusion generated by the brain's ability to fill in gaps with predicted content. What we consciously see is a highly edited, attentionally filtered reconstruction that feels complete but is not. The brain processes approximately 10 million bits of visual information per second but only about 40–60 bits per second reach conscious awareness. The rest is either discarded, used for unconscious computations (e.g., driving while daydreaming), or reconstructed from memory. The implication: consciousness is not a window onto reality but a carefully curated exhibition whose curation is invisible to the viewer.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Types of Change Blindness</div>
+            <ul>
+              <li><span class="li-k">Saccadic</span><span class="li-v">Changes during eye movements are not detected; the retinal image completely changes during saccades but experience is stable</span></li>
+              <li><span class="li-k">Flicker paradigm</span><span class="li-v">Alternating original and changed scene with blank interval; changes take 20+ seconds to detect (if ever)</span></li>
+              <li><span class="li-k">Scene cuts</span><span class="li-v">Film edits that change camera angle; viewers miss massive spatial discontinuities in continuous narrative</span></li>
+              <li><span class="li-k">Mudsplash</span><span class="li-v">Brief visual disruption (mudsplash overlay) masks changes as large as a person disappearing</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">What This Reveals About Consciousness</div>
+            <ul>
+              <li><span class="li-k">Sparse representation</span><span class="li-v">Consciousness does not contain a complete scene; it contains attentionally selected features</span></li>
+              <li><span class="li-k">Filling-in</span><span class="li-v">The brain constructs a sense of visual completeness from sparse sampling; the blind spot is never noticed</span></li>
+              <li><span class="li-k">Attention required</span><span class="li-v">Change detection requires conscious attention to the changing element; unattended features are genuinely not represented</span></li>
+              <li><span class="li-k">Metacognitive failure</span><span class="li-v">People are confident they would notice large changes; this confidence is systematically wrong</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="chapter-ornament">✦ · ✦ · ✦</div>
@@ -1616,7 +2051,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XV</span>
         <div class="chapter-title">Interventions</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80" alt="Medical setting - clinical interventions" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80" alt="Medical research setting - clinical interventions and therapeutic mechanisms" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Psychotherapy · Pharmacology · Neuromodulation · Lifestyle Medicine</div>
       </div>
@@ -1650,11 +2085,47 @@ a:hover { color: var(--accent-soft); }
             <tr><td>SSRIs / SNRIs</td><td>Monoamine reuptake inhibition (5-HT; 5-HT + NE)</td><td>Serotonin, BIS modulation; downstream neuroplasticity</td><td>MDD, anxiety, OCD, PTSD</td><td>2–4 week lag; 30–40% non-response; sexual side effects</td></tr>
             <tr><td>Atypical Antipsychotics</td><td>D2 + 5-HT2A antagonism (+ receptor polypharmacology)</td><td>Mesolimbic DA normalization; aberrant salience reduction</td><td>Schizophrenia, bipolar, adjunct MDD</td><td>Metabolic syndrome; akathisia; tardive dyskinesia (long-term)</td></tr>
             <tr><td>Benzodiazepines</td><td>GABA-A positive allosteric modulation (BZ site)</td><td>Global inhibition; amygdala calming</td><td>Acute anxiety, seizures, alcohol withdrawal</td><td>Tolerance, dependence; impairs memory consolidation during use</td></tr>
-            <tr><td>Ketamine / Esketamine</td><td>NMDA antagonism → disinhibition of AMPA → BDNF → mTOR → rapid synaptogenesis</td><td>Glutamate/plasticity; rapid PFC restoration</td><td>Treatment-resistant depression, acute suicidality</td><td>Short duration (1–2 weeks); dissociative effects; abuse potential</td></tr>
+            <tr><td>Ketamine / Esketamine</td><td>NMDA antagonism > disinhibition of AMPA > BDNF > mTOR > rapid synaptogenesis</td><td>Glutamate/plasticity; rapid PFC restoration</td><td>Treatment-resistant depression, acute suicidality</td><td>Short duration (1–2 weeks); dissociative effects; abuse potential</td></tr>
             <tr><td>Lithium</td><td>GSK-3β inhibition; inositol depletion; neuroprotective via BDNF and Bcl-2</td><td>Circadian stabilization; mood episode prevention; neuroplasticity</td><td>Bipolar disorder (gold standard); reduces suicide risk by ~60%</td><td>Narrow therapeutic window; renal and thyroid effects</td></tr>
-            <tr><td>Psychedelics (psilocybin)</td><td>5-HT2A agonism → ↓ DMN activity; ↑ neural entropy; global functional connectivity changes</td><td>Default mode disruption; plasticity window; neurogenesis</td><td>Treatment-resistant depression, OCD, addiction (investigational)</td><td>Set and setting dependency; psychosis risk in vulnerable; not FDA-approved for routine use</td></tr>
+            <tr><td>Psychedelics (psilocybin)</td><td>5-HT2A agonism > ↓ DMN activity; ↑ neural entropy; global functional connectivity changes</td><td>Default mode disruption; plasticity window; neurogenesis</td><td>Treatment-resistant depression, OCD, addiction (investigational)</td><td>Set and setting dependency; psychosis risk in vulnerable; not FDA-approved for routine use</td></tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Exercise as Medicine: The Most Underused Intervention</div>
+        <div class="prose">Aerobic exercise is the single most evidence-supported non-pharmacological intervention for brain health. Randomized controlled trials show that 150 minutes/week of moderate aerobic exercise produces effect sizes on cognitive function comparable to or exceeding SSRIs for mild-to-moderate depression (Schuch et al., 2016 meta-analysis: standardized mean difference = -0.80). The mechanisms are not metaphorical - exercise triggers a cascade of neuroplastic events: BDNF release increases by 2-3 fold during and after exercise; hippocampal neurogenesis (in the dentate gyrus) is potentiated; cerebrovascular perfusion improves, delivering more oxygen and glucose to neural tissue; inflammatory markers (IL-6, TNF-α, CRP) decrease; and IGF-1 and VEGF promote angiogenesis in the brain. In older adults, 1 year of aerobic exercise increased hippocampal volume by 2%, effectively reversing 1-2 years of age-related atrophy (Erickson et al., 2011). Exercise also enhances sleep quality (increased SWS), improves insulin sensitivity (relevant to Alzheimer's, sometimes called "type 3 diabetes"), and increases telomerase activity. The dose-response relationship is clear: more exercise produces more benefit, with diminishing returns above ~300 minutes/week. Any exercise is better than none, and the benefits begin within 2 weeks of consistent activity.</div>
+        <div class="fact-grid">
+          <div class="fact-cell"><div class="fact-val">2%</div><div class="fact-lab">Hippocampal volume increase (1yr aerobic exercise)</div></div>
+          <div class="fact-cell"><div class="fact-val">2-3×</div><div class="fact-lab">BDNF elevation during/after exercise</div></div>
+          <div class="fact-cell"><div class="fact-val">-0.80</div><div class="fact-lab">SMD for depression (exercise vs. control)</div></div>
+          <div class="fact-cell"><div class="fact-val">150 min</div><div class="fact-lab">Recommended weekly moderate aerobic activity</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Neuromodulation: Directly Reshaping Neural Circuits</div>
+        <div class="prose">Non-invasive brain stimulation techniques can modulate cortical excitability and have moved from laboratory curiosities to clinical tools. Transcranial magnetic stimulation (TMS) uses magnetic pulses to induce electrical currents in targeted cortical regions; repetitive TMS (rTMS) over left dlPFC is FDA-approved for treatment-resistant depression and works by normalizing the hyperactive DMN and enhancing PFC regulatory capacity. Transcranial direct current stimulation (tDCS) applies weak electrical currents through scalp electrodes to modulate neuronal resting membrane potential - anodal stimulation generally increases excitability, cathodal decreases it. While tDCS effect sizes are smaller than rTMS, the portability and safety profile make it attractive for cognitive enhancement research. Deep brain stimulation (DBS) - surgically implanted electrodes delivering continuous stimulation - is used for Parkinson's disease (subthalamic nucleus), treatment-resistant depression (subcallosal cingulate), and OCD (ventral capsule/ventral striatum). The emerging picture: targeted electrical modulation of specific circuits can produce clinical benefits that pharmacology cannot, because it directly modulates the circuit rather than altering global neurochemistry.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">TMS (Transcranial Magnetic Stimulation)</div>
+            <ul>
+              <li><span class="li-k">Mechanism</span><span class="li-v">Magnetic coil generates focal electrical field; induces action potentials in superficial cortical neurons</span></li>
+              <li><span class="li-k">Depression protocol</span><span class="li-v">High-frequency (10 Hz) rTMS to left dlPFC; 20-30 sessions; ~50% response rate in treatment-resistant MDD</span></li>
+              <li><span class="li-k">FDA-cleared</span><span class="li-v">MDD, OCD, smoking cessation, migraine; investigational for PTSD, anxiety, chronic pain</span></li>
+              <li><span class="li-k">Limitations</span><span class="li-v">Penetration limited to ~2cm cortex; cannot directly reach deep structures; variable individual response</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">tDCS (Transcranial Direct Current Stimulation)</div>
+            <ul>
+              <li><span class="li-k">Mechanism</span><span class="li-v">Weak current (1-2 mA) modulates resting membrane potential; anodal excitatory, cathodal inhibitory</span></li>
+              <li><span class="li-k">Applications</span><span class="li-v">Cognitive enhancement research; stroke rehabilitation; pain management; investigational for depression</span></li>
+              <li><span class="li-k">Evidence status</span><span class="li-v">Effect sizes are modest (d = 0.3-0.5); highly variable across studies; not yet FDA-approved for psychiatric indications</span></li>
+              <li><span class="li-k">Safety</span><span class="li-v">Well-tolerated; mild tingling/itching; no serious adverse events in >30,000 sessions in literature</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1665,7 +2136,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XVI</span>
         <div class="chapter-title">Integrative Frameworks</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80" alt="Earth from space - interconnected systems" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80" alt="Global network connections at scale - integrative brain frameworks and connectivity" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Predictive Processing · Network Neuroscience · Embodied Cognition</div>
       </div>
@@ -1675,11 +2146,11 @@ a:hover { color: var(--accent-soft); }
         <table class="data-table">
           <thead><tr><th>Network</th><th>Key Nodes</th><th>Function</th><th>Pathological State</th></tr></thead>
           <tbody>
-            <tr><td>Default Mode Network (DMN)</td><td>mPFC, PCC, angular gyrus, hippocampus, temporal poles</td><td>Self-referential thought, mental time travel, social cognition, mind-wandering</td><td>Hyperconnectivity → rumination (MDD); hyperactivity → intrusions (PTSD); reduced → schizophrenia</td></tr>
-            <tr><td>Salience Network (SN)</td><td>Anterior insula, ACC, amygdala, hypothalamus</td><td>Detecting biologically significant stimuli; interoception; switching between DMN and CEN</td><td>Dysregulation → psychosis; ↑ sensitivity → PTSD hyperarousal; ↓ → alexithymia</td></tr>
-            <tr><td>Central Executive Network (CEN)</td><td>dlPFC, posterior parietal cortex, FEF</td><td>Working memory, top-down attention, goal-directed cognition</td><td>Hypoconnectivity → ADHD, schizophrenia (negative symptoms), depression</td></tr>
-            <tr><td>Dorsal Attention Network (DAN)</td><td>FEF, intraparietal sulcus, MT+</td><td>Top-down voluntary spatial attention; endogenous attentional control</td><td>Disruption → hemispatial neglect; ADHD attentional difficulties</td></tr>
-            <tr><td>Ventral Attention Network (VAN)</td><td>Right TPJ, right inferior frontal gyrus</td><td>Bottom-up attentional capture to salient, unexpected stimuli</td><td>Excessive activation → distractibility; reduced → missed warnings</td></tr>
+            <tr><td>Default Mode Network (DMN)</td><td>mPFC, PCC, angular gyrus, hippocampus, temporal poles</td><td>Self-referential thought, mental time travel, social cognition, mind-wandering</td><td>Hyperconnectivity > rumination (MDD); hyperactivity > intrusions (PTSD); reduced > schizophrenia</td></tr>
+            <tr><td>Salience Network (SN)</td><td>Anterior insula, ACC, amygdala, hypothalamus</td><td>Detecting biologically significant stimuli; interoception; switching between DMN and CEN</td><td>Dysregulation > psychosis; ↑ sensitivity > PTSD hyperarousal; ↓ > alexithymia</td></tr>
+            <tr><td>Central Executive Network (CEN)</td><td>dlPFC, posterior parietal cortex, FEF</td><td>Working memory, top-down attention, goal-directed cognition</td><td>Hypoconnectivity > ADHD, schizophrenia (negative symptoms), depression</td></tr>
+            <tr><td>Dorsal Attention Network (DAN)</td><td>FEF, intraparietal sulcus, MT+</td><td>Top-down voluntary spatial attention; endogenous attentional control</td><td>Disruption > hemispatial neglect; ADHD attentional difficulties</td></tr>
+            <tr><td>Ventral Attention Network (VAN)</td><td>Right TPJ, right inferior frontal gyrus</td><td>Bottom-up attentional capture to salient, unexpected stimuli</td><td>Excessive activation > distractibility; reduced > missed warnings</td></tr>
           </tbody>
         </table>
       </div>
@@ -1691,10 +2162,44 @@ a:hover { color: var(--accent-soft); }
           <div class="eq">F = E_q[ln q(ϕ) − ln p(o,ϕ)]</div>
           <div class="comment">Free energy = expected log density under approximate posterior minus joint log density</div>
           <div style="margin-top:10px;">
-            <div class="eq">Perception: minimize F by updating q(ϕ) → changing beliefs</div>
-            <div class="eq">Action: minimize F by changing o → changing the world to fit predictions</div>
+            <div class="eq">Perception: minimize F by updating q(ϕ) > changing beliefs</div>
+            <div class="eq">Action: minimize F by changing o > changing the world to fit predictions</div>
             <div class="eq">Precision weighting (attention): modulate ∂F/∂ε by estimated reliability of prediction errors</div>
           </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Predictive Coding: The Hierarchical Bayesian Brain</div>
+        <div class="prose">Predictive coding operationalizes the free energy principle at the level of cortical microcircuitry. Each level of the cortical hierarchy generates predictions (top-down) about the activity of the level below. The level below sends back only the prediction error (bottom-up) - the discrepancy between what was predicted and what was received. This creates a remarkably efficient coding scheme: the brain does not transmit raw sensory data up the hierarchy but only the surprising components that could not be predicted. Perception, in this framework, is the process of minimizing prediction error by adjusting the generative model until it adequately explains the incoming data.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Cortical Implementation</div>
+            <ul>
+              <li><span class="li-k">Deep pyramidal cells</span><span class="li-v">Layer V/VI: transmit predictions downward via backward connections; carry the generative model</span></li>
+              <li><span class="li-k">Superficial pyramidal cells</span><span class="li-v">Layer II/III: compute and transmit prediction errors upward; these are the neurons primarily measured by fMRI BOLD signal</span></li>
+              <li><span class="li-k">Precision modulation</span><span class="li-v">Lateral inhibitory interneurons gate prediction errors based on estimated reliability; attention = precision weighting</span></li>
+              <li><span class="li-k">Hierarchical depth</span><span class="li-v">Low levels: fast, simple predictions (edge detection). High levels: slow, complex predictions (causal structure, meaning)</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Clinical Applications</div>
+            <ul>
+              <li><span class="li-k">Autism spectrum</span><span class="li-v">Attenuated priors ("hypopriors") > prediction errors dominate > sensory overload; need for predictable environments</span></li>
+              <li><span class="li-k">Schizophrenia</span><span class="li-v">Impaired precision weighting > aberrant salience (prediction errors treated as significant when they are not)</span></li>
+              <li><span class="li-k">Chronic pain</span><span class="li-v">Prior expectations of pain amplify nociceptive prediction errors; top-down priors can generate pain without tissue damage</span></li>
+              <li><span class="li-k">Placebo effect</span><span class="li-v">Strong prior expectations (from context, conditioning, suggestion) reduce prediction error for pain; genuine neurochemical change (endogenous opioids)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Active Inference: Action as Model-Fitting</div>
+        <div class="prose">The free energy principle extends beyond perception to action. If the brain cannot reduce prediction error by updating its model (perception), it can instead act on the world to make sensory input conform to its predictions. Reaching for a cup is not primarily a motor command - it is the brain's attempt to minimize the discrepancy between its predicted sensory state (hand on cup) and the current sensory state (hand not on cup). Motor commands are proprioceptive predictions, not instructions. This reframing unifies perception and action under a single computational principle and explains phenomena from phantom limb pain (persistent proprioceptive predictions) to psychogenic movement disorders (conflicting predictive models).</div>
+        <div class="callout">
+          <div class="callout-label">The Embodied Predictive Mind</div>
+          <p>Active inference implies that the body is not a passive receiver of commands but an active participant in perception. Interoceptive predictions - the brain's model of its own physiological state - constitute the felt sense of emotions (Barrett's constructed emotion theory). Anxiety, in this framework, is not triggered by a threatening stimulus but by a prior expectation of threat that generates interoceptive prediction errors (racing heart, shallow breathing) which are then interpreted as the emotion itself. The prediction does not represent anxiety - it constitutes it.</p>
         </div>
       </div>
 
@@ -1706,7 +2211,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XVII</span>
         <div class="chapter-title">Human Limits &amp; Performance</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200&q=80" alt="Athlete pushing limits - peak human performance" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1200&q=80" alt="Extreme athletic effort - human physiological and cognitive limits" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Physiological Boundaries · Cognitive Capacity · Peak States</div>
       </div>
@@ -1742,13 +2247,109 @@ a:hover { color: var(--accent-soft); }
           <div class="col-pane">
             <div class="col-pane-title">Physical Performance</div>
             <ul>
-              <li><span class="li-k">Max voluntary force</span><span class="li-v">50–60% of true muscle max; emergency stress → 200–300%</span></li>
+              <li><span class="li-k">Max voluntary force</span><span class="li-v">50–60% of true muscle max; emergency stress > 200–300%</span></li>
               <li><span class="li-k">VO₂ max (elite endurance)</span><span class="li-v">70–90 ml/kg/min (Oskar Svendsen: 97.5 ml/kg/min)</span></li>
               <li><span class="li-k">Cortical activity</span><span class="li-v">20 watts - equivalent to a dim light bulb</span></li>
               <li><span class="li-k">Neural firing rate</span><span class="li-v">0.1–100 Hz; typical cortical: 10–40 Hz</span></li>
               <li><span class="li-k">Signal conduction</span><span class="li-v">0.5 m/s (unmyelinated C-fiber) to 120 m/s (myelinated Aα)</span></li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">The Stress-Performance Curve</div>
+        <div class="prose">The relationship between arousal (physiological activation) and performance is not linear - it follows an inverted-U function known as the Yerkes-Dodson law. At low arousal, the organism is understimulated and performance suffers from inattention. At moderate arousal, cortical gain is optimized, attention is focused, and performance peaks. At high arousal, the prefrontal cortex is overwhelmed by noradrenergic and glucocorticoid flooding, executive function collapses, and behavior regresses to habitual and Pavlovian responses. Crucially, the optimal arousal level varies with task complexity: simple, well-learned tasks benefit from high arousal, while complex, novel tasks are best performed at moderate arousal.</div>
+        <div class="card-row">
+          <div class="card">
+            <div class="card-eyebrow">Inverted-U Dynamics</div>
+            <div class="card-title">Yerkes-Dodson Law: Neural Basis</div>
+            <div class="card-body"><ul>
+              <li><strong>Low arousal:</strong> Insufficient NE/DA tone; PFC neurons fire weakly; poor signal-to-noise ratio</li>
+              <li><strong>Moderate arousal:</strong> Optimal NE engages α2A receptors on PFC; DA engages D1 receptors; working memory function peaks</li>
+              <li><strong>High arousal:</strong> Excessive NE engages α1 receptors (stress pathway); DA excess impairs PFC; amygdala takes control</li>
+              <li><strong>Collapse:</strong> "Amygdala hijack" (Goleman); regression to habit, freezing, or panic</li>
+            </ul></div>
+          </div>
+          <div class="card">
+            <div class="card-eyebrow">Recovery Physiology</div>
+            <div class="card-title">Parasympathetic Restoration</div>
+            <div class="card-body"><ul>
+              <li><strong>Vagal brake:</strong> Vagus nerve (CN X) slows heart rate; higher HRV = faster recovery</li>
+              <li><strong>Cortisol clearance:</strong> Biological half-life 60–90 min; enzymatic degradation in liver</li>
+              <li><strong>Adenosine clearance:</strong> Sleep-dependent; caffeine blocks receptors but does not remove adenosine</li>
+              <li><strong>Glycogen restoration:</strong> Astrocytic glycogen replenished during rest and sleep (Magistretti's astrocyte-neuron lactate shuttle)</li>
+            </ul></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Flow States: Optimal Experience</div>
+        <div class="prose">Csikszentmihalyi's flow state - the experience of total absorption in an activity where self-consciousness disappears, time perception distorts, and performance feels effortless yet optimal - has identifiable neural correlates. Flow occurs at the intersection of high challenge and high skill, when task demands match the individual's capacity. Neurochemically, flow is associated with a distinctive cocktail: transient hypofrontality (reduced PFC self-monitoring), elevated endorphins and endocannabinoids, norepinephrine and dopamine within the optimal range, and anandamide release. The subjective experience of effortlessness is real - the metabolic cost of task execution genuinely decreases during flow, likely because the reduced PFC monitoring eliminates the overhead of self-referential processing.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Neural Signature of Flow</div>
+            <ul>
+              <li><span class="li-k">Transient hypofrontality</span><span class="li-v">↓ dlPFC and mPFC activity; reduced self-monitoring and inner critic</span></li>
+              <li><span class="li-k">Striatal engagement</span><span class="li-v">↑ dorsal striatum (skill execution); ↓ ventral striatum (outcome monitoring)</span></li>
+              <li><span class="li-k">Autonomic shift</span><span class="li-v">Sympathetic activation without stress markers; high HRV during task; "effortful ease"</span></li>
+              <li><span class="li-k">Cortical pattern</span><span class="li-v">Left-hemisphere dominance for skilled action; reduced interhemispheric communication</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Prerequisites for Flow</div>
+            <ul>
+              <li><span class="li-k">Challenge-skill balance</span><span class="li-v">Task difficulty must slightly exceed current ability (~4% above capacity in optimal training)</span></li>
+              <li><span class="li-k">Clear goals</span><span class="li-v">Unambiguous feedback eliminates PFC deliberation; allows automaticity to dominate</span></li>
+              <li><span class="li-k">Immediate feedback</span><span class="li-v">Rapid error detection enables online correction without conscious monitoring</span></li>
+              <li><span class="li-k">Deep practice history</span><span class="li-v">~10,000 hours of deliberate practice (Ericsson); automatized motor and cognitive subroutines</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Cognitive Fatigue & Ego Depletion: What the Science Actually Shows</div>
+        <div class="prose">The "ego depletion" hypothesis - that willpower draws on a limited resource that is depleted by use - has been one of psychology's most influential ideas. However, large-scale replication attempts have produced mixed results, and the original glucose-depletion mechanism has been largely discredited. The current picture: sustained cognitive effort does produce subjective fatigue and measurable performance decline, but the mechanism appears to be motivational and attentional rather than resource-based. The brain monitors opportunity cost - the value of continued effort relative to alternative activities - and signals fatigue when the perceived cost of continuing exceeds the expected reward. This reframing, supported by Muraven's conservation model and Inzlicht's process model, suggests that "willpower" is less like a battery and more like a thermostat.</div>
+        <div class="callout">
+          <div class="callout-label">The Motivational Account of Fatigue</div>
+          <p>When subjects believe a second task will be their last (reducing perceived future cost), ego depletion effects disappear. When monetary incentives are offered, depleted subjects perform as well as non-depleted controls. The implication: what feels like exhaustion is often a cost-benefit calculation by the brain, not a literal depletion of a neural resource. This does not mean the subjective experience is fake - the motivation signal is real and powerful - but it does suggest that interventions targeting motivation and meaning may be more effective than those targeting glucose or rest.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Deliberate Practice vs. Talent: The 10,000-Hour Debate</div>
+        <div class="prose">Ericsson's deliberate practice framework proposed that expert performance is built through ~10,000 hours of structured, effortful practice with feedback - not innate talent. The popularization by Gladwell created the "10,000-hour rule" as a universal truth, which subsequent research has substantially complicated. Macnamara et al.'s 2014 meta-analysis found that deliberate practice explains only 12% of performance variance in games, 26% in music, 21% in sports, 4% in education, and less than 1% in professional performance. The truth is more nuanced: deliberate practice is necessary but not sufficient. Genetic factors (including working memory capacity, processing speed, and physical attributes like VO2 max and height) set the ceiling; practice determines how close to that ceiling the individual gets. The neural mechanism of expertise is not generic brain growth but domain-specific circuit optimization: chess experts develop pattern recognition networks in the fusiform and posterior parietal regions; musicians develop enlarged auditory cortex and corpus callosum connectivity; athletes develop optimized motor prediction circuits in the cerebellum and premotor cortex. The 10,000 hours are not magical - they are the approximate time required for the brain to automate domain-specific subroutines to the point where System 2 can be bypassed entirely.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">What Makes Practice "Deliberate"</div>
+            <ul>
+              <li><span class="li-k">Beyond comfort zone</span><span class="li-v">Operating at the edge of current ability; tasks slightly above the current competence level</span></li>
+              <li><span class="li-k">Immediate feedback</span><span class="li-v">Rapid error detection enables correction; without feedback, practice reinforces errors</span></li>
+              <li><span class="li-k">Focused attention</span><span class="li-v">Full cognitive engagement; mindless repetition does not drive circuit optimization</span></li>
+              <li><span class="li-k">Repetition with refinement</span><span class="li-v">Iterative improvement; each repetition targets a specific sub-skill identified by feedback</span></li>
+              <li><span class="li-k">Mental representation</span><span class="li-v">Experts develop rich internal models of their domain; these models guide attention and enable prediction</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">The Expertise Paradox</div>
+            <ul>
+              <li><span class="li-k">Einstellung effect</span><span class="li-v">Expertise can trap thinking in familiar patterns; experts miss novel solutions that novices find (chess studies)</span></li>
+              <li><span class="li-k">Curse of knowledge</span><span class="li-v">Experts cannot accurately simulate the novice perspective; they overestimate baseline knowledge in others</span></li>
+              <li><span class="li-k">Automaticity trap</span><span class="li-v">Automated expert performance may be disrupted by conscious monitoring; "choking" under pressure reflects reversion to System 2</span></li>
+              <li><span class="li-k">Transfer failure</span><span class="li-v">Expertise in one domain rarely transfers to another; a chess master gains no advantage in Go from chess expertise alone</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">The Attentional Blink & Temporal Limits of Awareness</div>
+        <div class="prose">The attentional blink is a striking demonstration of consciousness's temporal bottleneck. When two targets appear in rapid succession (200-500ms apart) within a stream of stimuli, the second target is often completely missed - not because it wasn't physically presented to the retina, but because the brain's attentional resources are still occupied with processing the first target. The neural mechanism: the first target triggers a P3b "ignition" wave (Dehaene's global workspace), which monopolizes frontoparietal resources for 200-500ms. During this blink, a second stimulus can be processed at the sensory level (V1-V4 activity is normal) but cannot access the global workspace required for conscious report. The attentional blink reveals that consciousness has a refractory period - like a camera shutter that must close and reopen between exposures. Individual differences in blink duration correlate with working memory capacity: people with larger WM capacity show shorter blinks, likely because they can process the first target faster and free resources sooner.</div>
+        <div class="callout">
+          <div class="callout-label">Repetition Blindness: The Forgotten Twin</div>
+          <p>Closely related to the attentional blink, repetition blindness is the failure to detect a repeated item in a rapid serial stream. When shown "It is always the and the weather that determines..." at rapid presentation rates, people often miss the second "the." This is not a perceptual failure but a tokenization failure: the brain has already created a token for "the" and resists creating a second one for the same stimulus. Repetition blindness reveals that consciousness involves active tokenization - the conversion of continuous sensory input into discrete, categorizable representations - and that this process has limits that affect what we can consciously see.</p>
         </div>
       </div>
 
@@ -1760,7 +2361,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XVIII</span>
         <div class="chapter-title">Language &amp; Thought</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1200&q=80" alt="Open books - language and thought" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80" alt="Library shelves of books and language - neural architecture of symbolic thought" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Neural Architecture of Language · Embodied Semantics · Linguistic Relativity</div>
       </div>
@@ -1783,9 +2384,70 @@ a:hover { color: var(--accent-soft); }
       <div class="section">
         <div class="section-title">Embodied Semantics</div>
         <div class="prose">Classical cognitive science treated meaning as abstract, amodal symbols. The embodied cognition framework, supported by substantial neuroimaging evidence, proposes instead that semantic knowledge is grounded in sensorimotor simulations. Understanding the word "kick" activates motor cortex representations of leg movement. Understanding "sandpaper" activates somatosensory cortex. This is not metaphorical - it is literal reactivation of the perceptual and motor systems involved in the original experience.</div>
-        <div class="callout callout-gold">
+        <div class="callout">
           <div class="callout-label">Linguistic Relativity (Whorf-Sapir Hypothesis)</div>
           <p>Strong Whorfian determinism (language determines thought) has been largely rejected. The weak version - language influences habitual thought and non-linguistic cognition in specific domains - has substantial empirical support. Russian speakers, who have obligatory lexical distinction between light blue (goluboy) and dark blue (siniy), show a perceptual advantage in the categorical perception of these colors that disappears under verbal interference. Language does not imprison thought - but it does sculpt its default contours.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">The Bilingual Brain</div>
+        <div class="prose">Bilingualism is not simply knowing two languages - it involves a fundamentally different neural architecture for cognitive control. Both languages remain active simultaneously in the bilingual brain, requiring constant inhibition of the non-target language. This perpetual act of executive control appears to confer neuroprotective benefits: bilinguals show delayed onset of Alzheimer's symptoms by an average of 4–5 years compared to monolinguals, even when controlling for education, socioeconomic status, and immigration history. The mechanism is believed to involve increased cognitive reserve built through decades of language-switching demands on the dorsolateral prefrontal cortex and anterior cingulate.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Bilingual Language Control</div>
+            <ul>
+              <li><span class="li-k">Joint activation</span><span class="li-v">Both language lexicons are active during speech; non-target language must be suppressed</span></li>
+              <li><span class="li-k">Inhibitory control</span><span class="li-v">dlPFC and ACC manage language selection; stronger inhibition needed when L2 is weaker</span></li>
+              <li><span class="li-k">Language switching</span><span class="li-v">Switching costs (~200ms) reflect reconfiguration of the language control network; reduced with practice</span></li>
+              <li><span class="li-k">Code-switching</span><span class="li-v">Alternating languages mid-sentence is not confusion - it is a sophisticated sociolinguistic strategy governed by grammatical and pragmatic rules</span></li>
+              <li><span class="li-k">Age of acquisition</span><span class="li-v">Early bilinguals show overlapping neural representations; late bilinguals show more distinct and effortful activation</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Cognitive Consequences</div>
+            <ul>
+              <li><span class="li-k">Executive function</span><span class="li-v">Enhanced conflict monitoring (ACC) and inhibitory control; bilingual advantage in Simon and Flanker tasks (debated)</span></li>
+              <li><span class="li-k">Metalinguistic awareness</span><span class="li-v">Earlier understanding that words are arbitrary symbols; advantages in reading acquisition</span></li>
+              <li><span class="li-k">Cognitive reserve</span><span class="li-v">Increased white matter integrity in corpus callosum and frontal tracts; delayed dementia onset 4–5 years</span></li>
+              <li><span class="li-k">Emotional processing</span><span class="li-v">L1 carries more emotional weight (lower skin conductance response in L2); swear words and endearments are more powerful in L1</span></li>
+              <li><span class="li-k">Decision-making</span><span class="li-v">Foreign language effect: decisions made in L2 are more utilitarian and less loss-averse (reduced emotional framing)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Inner Speech & the Inner Voice</div>
+        <div class="prose">Most people experience a continuous stream of inner speech - an internal monologue that accompanies planning, reasoning, self-regulation, and rumination. Vygotsky proposed that inner speech develops from overt private speech (children talking to themselves) through a process of internalization and abbreviation. Neurally, inner speech activates the left IFG (Broca's area), supplementary motor area (speech planning), and bilateral auditory cortex (inner ear) - essentially a full speech production loop executed without actual vocalization. The degree to which people experience inner speech varies substantially: some individuals report a constant verbal stream, while others think primarily in images, feelings, or abstract representations. This individual variation correlates with differences in default mode network activity and may explain differences in verbal reasoning speed and susceptibility to verbal-based cognitive biases.</div>
+        <div class="callout">
+          <div class="callout-label">Aphasia Recovery & Neuroplasticity</div>
+          <p>After left hemisphere stroke causing aphasia, recovery involves three mechanisms: perilesional reorganization (adjacent tissue takes over lost functions), right hemisphere recruitment (homologous areas compensate, though often less efficiently), and network-level reconfiguration (alternative pathways bypass damaged nodes). Constraint-induced language therapy (CILT) - forcing use of language despite impairment - drives perilesional plasticity and produces superior outcomes to standard therapy in multiple RCTs. The critical window for language recovery extends 6–12 months post-stroke, but meaningful improvement is documented years later with intensive intervention, challenging older assumptions about fixed recovery timelines.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Number Words & Cognition: When Language Shapes Thought</div>
+        <div class="prose">The Pirahã people of the Brazilian Amazon have no words for exact numbers beyond approximate terms for "one," "two," and "many." Peter Gordon's and Frank et al.'s studies showed that Pirahã speakers perform accurately on approximate number tasks (comparing which of two large quantities is greater) but fail exact arithmetic (matching exact quantities, exact one-to-one correspondence) - not because of cognitive deficit but because their language lacks the recursive counting system needed to represent exact quantities. This is one of the strongest empirical demonstrations of the weak Sapir-Whorf hypothesis: the absence of number words constrains exact numerical cognition. Similarly, the Pirahã lack color terms beyond "light" and "dark," and show reduced categorical color perception. The Mundurukú, another Amazonian group with approximate but not exact number words, show a similar pattern. These findings suggest that language provides the symbolic scaffolding that transforms approximate, analog magnitude representations into exact, discrete numerical concepts. Without the words, the concepts remain analog and approximate - functional for ecological tasks but inadequate for mathematics.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Language-Dependent Cognitive Capacities</div>
+            <ul>
+              <li><span class="li-k">Exact number</span><span class="li-v">Requires recursive counting words; absent in Pirahã, present in all numerate cultures</span></li>
+              <li><span class="li-k">False belief</span><span class="li-v">Children with specific language impairment fail false belief tasks; complement clauses ("he thinks that...") may scaffold ToM</span></li>
+              <li><span class="li-k">Temporal reasoning</span><span class="li-v">Mandarin uses vertical metaphors (up/down for earlier/later); Aymara uses past=in front, future=behind; these shape temporal reasoning</span></li>
+              <li><span class="li-k">Spatial navigation</span><span class="li-v">Guugu Yimithirr speakers use absolute cardinal directions (north/south/east/west) instead of relative (left/right); develop superior dead reckoning</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Universal Grammar vs. Usage-Based Learning</div>
+            <ul>
+              <li><span class="li-k">Chomsky's position</span><span class="li-v">Universal Grammar (UG): innate, domain-specific language acquisition device; poverty of the stimulus argument</span></li>
+              <li><span class="li-k">Usage-based (Tomasello)</span><span class="li-v">Language learned through general cognitive mechanisms: pattern detection, statistical learning, intention-reading, analogy</span></li>
+              <li><span class="li-k">Statistical learning</span><span class="li-v">8-month-old infants detect transitional probabilities in speech streams; this bootstraps word segmentation without innate grammar</span></li>
+              <li><span class="li-k">Current consensus</span><span class="li-v">UG in strong form largely abandoned; innate biases exist (statistical learning, vocal tract constraints) but are not language-specific modules</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1797,7 +2459,7 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Chapter XIX</span>
         <div class="chapter-title">Development Across the Lifespan</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1200&q=80" alt="Child learning - development across the lifespan" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1200&q=80" alt="Young hands and old hands side by side - lifespan neural development" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Critical Periods · Adolescent Brain · Aging · Neurodegenerative Trajectories</div>
       </div>
@@ -1808,7 +2470,7 @@ a:hover { color: var(--accent-soft); }
           <thead><tr><th>Stage</th><th>Key Neural Events</th><th>Behavioral Capacities</th><th>Vulnerabilities</th></tr></thead>
           <tbody>
             <tr><td>Prenatal (0–9 months)</td><td>Neurogenesis (peak at 7 weeks gestation), neuronal migration, cortical layer formation (inside-out), synaptogenesis begins</td><td>Fetal learning (habituation, voice recognition by ~28 weeks)</td><td>Teratogens, infection, maternal stress alter cortical organization permanently</td></tr>
-            <tr><td>Early Childhood (0–5 years)</td><td>Synaptic exuberance followed by pruning; critical periods for sensory systems; language explosion; rapid myelination</td><td>Language acquisition, attachment, basic executive function, theory of mind (~4 years)</td><td>Adverse experiences → HPA calibration; toxic stress alters hippocampal development</td></tr>
+            <tr><td>Early Childhood (0–5 years)</td><td>Synaptic exuberance followed by pruning; critical periods for sensory systems; language explosion; rapid myelination</td><td>Language acquisition, attachment, basic executive function, theory of mind (~4 years)</td><td>Adverse experiences > HPA calibration; toxic stress alters hippocampal development</td></tr>
             <tr><td>Middle Childhood (6–12 years)</td><td>Continued frontal and parietal myelination; pruning of unused circuits; consolidation of executive function</td><td>Logical operations (Piaget), sustained attention, reading, arithmetic, peer social cognition</td><td>Chronic school adversity; learning disorder identification window</td></tr>
             <tr><td>Adolescence (12–24 years)</td><td>Subcortical maturation precedes PFC (imbalance model); peak synaptic pruning in PFC; dopamine system remodeling; sleep phase delay</td><td>Abstract reasoning, identity formation, heightened creativity - but also peak impulsivity, risk-taking, emotional reactivity</td><td>Depression, anxiety, psychosis, substance use disorders peak onset; second critical period for plasticity</td></tr>
             <tr><td>Early Adulthood (25–40)</td><td>PFC maturation completes (~25 years); peak cognitive performance in most domains; stable temperament</td><td>Full executive function, emotional regulation, complex social cognition, career and relationship formation</td><td>Work stress, sleep deprivation; onset of some anxiety disorders</td></tr>
@@ -1821,9 +2483,86 @@ a:hover { color: var(--accent-soft); }
       <div class="section">
         <div class="section-title">The Adolescent Brain: Imbalance Model</div>
         <div class="prose">The striking pattern of adolescent behavior - risk-taking, novelty-seeking, heightened emotional reactivity, peer sensitivity, and impulsivity - is not pathological. It reflects the normal developmental sequence of brain maturation: subcortical systems (limbic, striatal, reward) reach adult levels of reactivity by ~15–16 years, while prefrontal regulatory capacity continues maturing until ~25 years. This imbalance between a fully activated accelerator and a still-developing brake produces the characteristic behavioral profile of adolescence.</div>
-        <div class="callout callout-teal">
+        <div class="callout">
           <div class="callout-label">Adolescent Plasticity as Opportunity</div>
           <p>The same heightened dopaminergic sensitivity and reduced PFC constraint that produces adolescent risk-taking also creates a second critical period of exceptional neural plasticity - potentially as significant as early childhood. Experiences during this window have outsized effects on adult cognitive style, emotional regulation, and personality. This is why adolescent music training, language acquisition, athletic skill development, and social learning produce more durable adult competencies than equivalent learning begun in adulthood.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Neurodegenerative Trajectories</div>
+        <div class="prose">Aging is not a disease, but it is the primary risk factor for neurodegeneration. The brain's vulnerability to age-related pathology is not uniform: specific neuronal populations, circuits, and molecular pathways are preferentially targeted, and understanding this selectivity is essential for both diagnosis and intervention. The two dominant neurodegenerative conditions - Alzheimer's disease and Parkinson's disease - follow distinct but occasionally overlapping trajectories through the brain.</div>
+        <table class="data-table">
+          <thead><tr><th>Condition</th><th>Initial Target</th><th>Spread Pattern</th><th>Core Pathology</th><th>Cognitive Signature</th></tr></thead>
+          <tbody>
+            <tr><td>Alzheimer's Disease</td><td>Entorhinal cortex > hippocampus > neocortex (Braak staging)</td><td>Trans-synaptic propagation of tau; follows functional connectivity</td><td>Extracellular amyloid-β plaques + intracellular neurofibrillary tau tangles; neuroinflammation (microglia)</td><td>Episodic memory first (hippocampal); then semantic, executive, visuospatial; language preserved until late</td></tr>
+            <tr><td>Parkinson's Disease</td><td>Dorsal motor nucleus of vagus > locus coeruleus > SNc > cortex (Braak)</td><td>α-synuclein (Lewy bodies) spread prion-like along axonal projections</td><td>Nigrostriatal dopamine neuron loss (>60% by symptom onset); α-synuclein aggregation</td><td>Motor (resting tremor, rigidity, bradykinesia); then executive dysfunction, dementia in 80% at 20 years</td></tr>
+            <tr><td>Frontotemporal Dementia</td><td>Frontal and/or temporal lobes (behavioral or language variant)</td><td>Focal atrophy; tau or TDP-43 pathology</td><td>FTLD-tau (Pick bodies) or FTLD-TDP-43; genetics: MAPT, GRN, C9orf72</td><td>Behavioral disinhibition, apathy, loss of empathy (bvFTD); progressive aphasia (semantic or nonfluent variants)</td></tr>
+            <tr><td>Lewy Body Dementia</td><td>Cortical (occipital > frontal) + brainstem</td><td>α-synuclein in cortical neurons</td><td>Cortical Lewy bodies; cholinergic deficit > dopaminergic</td><td>Visual hallucinations (often early); fluctuating cognition; parkinsonism; REM sleep behavior disorder (prodromal)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Cognitive Reserve & the Aging Brain</div>
+        <div class="prose">Not all brains age equally. The concept of cognitive reserve - introduced by Stern - explains why individuals with identical levels of brain pathology can show vastly different levels of cognitive impairment. Reserve is built through education, occupational complexity, social engagement, bilingualism, physical exercise, and lifelong learning. Neurally, reserve manifests as greater network efficiency, more diverse neural recruitment during tasks, and larger brain volume relative to pathology load. Critically, reserve does not prevent neurodegeneration - it provides a buffer that delays the clinical expression of existing pathology.</div>
+        <div class="card-row">
+          <div class="card">
+            <div class="card-eyebrow">Protective Factors</div>
+            <div class="card-title">Building Cognitive Reserve</div>
+            <div class="card-body"><ul>
+              <li><strong>Education:</strong> Each additional year of education reduces dementia risk by ~11% (meta-analysis); builds network redundancy</li>
+              <li><strong>Physical exercise:</strong> Aerobic activity increases hippocampal volume (3–5% in 1-year RCTs); upregulates BDNF; improves cerebrovascular health</li>
+              <li><strong>Social engagement:</strong> Loneliness increases dementia risk by 50%; social interaction provides cognitive stimulation and stress buffering</li>
+              <li><strong>Cognitive stimulation:</strong> Novel, effortful activities (learning instruments, languages) build new neural pathways; passive entertainment does not</li>
+              <li><strong>Sleep quality:</strong> Glymphatic clearance of amyloid-β is sleep-dependent; chronic short sleep accelerates amyloid accumulation</li>
+            </ul></div>
+          </div>
+          <div class="card">
+            <div class="card-eyebrow">Telomere Biology</div>
+            <div class="card-title">Cellular Aging & Brain Health</div>
+            <div class="card-body"><ul>
+              <li><strong>Telomeres:</strong> Protective chromosome caps that shorten with each cell division; critical threshold > cellular senescence</li>
+              <li><strong>Telomerase:</strong> Enzyme that rebuilds telomeres; active in stem cells and hippocampal neurons; inhibited by chronic stress</li>
+              <li><strong>Cortisol effect:</strong> Chronic stress reduces telomerase activity; accelerates telomere shortening; equivalent to 9–17 years of additional aging</li>
+              <li><strong>Exercise & meditation:</strong> Both increase telomerase activity and slow telomere attrition in RCTs</li>
+              <li><strong>Leukocyte telomere length:</strong> Emerging biomarker of biological aging; correlates with hippocampal volume and cognitive performance</li>
+            </ul></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">The Positivity Effect & Emotional Aging</div>
+        <div class="prose">One of the most robust findings in aging research is the "positivity effect" - older adults preferentially attend to, remember, and process positive information relative to negative information. This is not denial or cognitive decline; it reflects a genuine shift in motivational priorities. Carstensen's socioemotional selectivity theory proposes that as time horizons shrink, people prioritize emotionally meaningful goals and relationships over information-gathering and expansion. Neurally, this corresponds to increased amygdala reactivity to positive stimuli in older adults (the reverse of the pattern in young adults), maintained ventral striatum reward function for social and emotional stimuli, and greater reliance on the default mode network for emotion regulation. The result: subjective wellbeing is U-shaped across the lifespan, with a nadir in the mid-40s and a recovery in older age that is partially independent of objective health or wealth.</div>
+        <div class="callout">
+          <div class="callout-label">Cognitive Aging: The Crystallized-Fluid Distinction</div>
+          <p>Cattell's distinction between fluid intelligence (Gf: processing speed, working memory, novel problem-solving - dependent on neural integrity and speed) and crystallized intelligence (Gc: accumulated knowledge, vocabulary, expertise - dependent on cortical semantic networks) explains the paradox of aging cognition. Gf declines from the mid-20s onward, accelerating after 60. Gc continues to rise until the 60s-70s and remains stable or declines only slightly thereafter. This is why older adults are better at crossword puzzles (Gc) but slower at digit-symbol coding (Gf), and why expert knowledge in a domain can compensate for processing speed losses well into the 70s and 80s.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Critical Period Reopening: Can You Turn Back the Clock?</div>
+        <div class="prose">Critical periods are windows of heightened plasticity that close as the brain matures - but the mechanisms that close them are increasingly well understood, and some can be pharmacologically reopened. The critical period for ocular dominance plasticity (the basis of amblyopia treatment) is closed by the maturation of perineuronal nets (PNNs) - extracellular matrix structures that stabilize synaptic connections and wrap around parvalbumin-positive interneurons. Bhatt et al. and other groups have shown that enzymatic digestion of PNNs (chondroitinase ABC) or pharmacological reopening of critical period states (fluoxetine, valproate) can reopen plasticity in adult visual cortex, allowing recovery from amblyopia that was previously considered untreatable after age 8-10. More recently, epigenetic mechanisms have been identified as critical period regulators: HDAC inhibitors and valproate (an HDAC inhibitor) reopen plasticity by loosening chromatin structure and re-enabling the gene expression programs that permitted juvenile plasticity. In humans, valproate has been shown to reopen absolute pitch learning in adults - a capacity normally restricted to a critical period ending around age 6. The implications extend beyond sensory systems: if the molecular brakes on plasticity can be identified and selectively released, adult brains may be capable of forms of learning and recovery that current models assume are permanently lost.</div>
+        <div class="two-col">
+          <div class="col-pane">
+            <div class="col-pane-title">Molecular Brakes on Plasticity</div>
+            <ul>
+              <li><span class="li-k">Perineuronal nets (PNNs)</span><span class="li-v">Extracellular matrix stabilizes PV+ interneuron synapses; maturation closes critical periods</span></li>
+              <li><span class="li-k">Lynx1</span><span class="li-v">Endogenous inhibitor of nicotinic ACh receptors; increases with age; reduces cholinergic plasticity</span></li>
+              <li><span class="li-k">Myelin-associated inhibitors</span><span class="li-v">Nogo, MAG, OMgp restrict axonal sprouting; anti-Nogo antibodies enhance recovery after spinal cord injury</span></li>
+              <li><span class="li-k">Epigenetic silencing</span><span class="li-v">DNA methylation and histone deacetylation close chromatin around plasticity genes in mature circuits</span></li>
+            </ul>
+          </div>
+          <div class="col-pane">
+            <div class="col-pane-title">Strategies for Adult Plasticity Enhancement</div>
+            <ul>
+              <li><span class="li-k">Environmental enrichment</span><span class="li-v">Novel, complex environments restore juvenile plasticity markers in adult rodents; BDNF-dependent</span></li>
+              <li><span class="li-k">Fluoxetine (SSRI)</span><span class="li-v">Reopens visual cortex critical period in adult rats; mechanism: reduces intracortical inhibition</span></li>
+              <li><span class="li-k">Valproate</span><span class="li-v">HDAC inhibitor; reopens absolute pitch acquisition in adult humans (2013 study)</span></li>
+              <li><span class="li-k">Psychedelics</span><span class="li-v">Psilocybin promotes dendritic spine growth and synaptogenesis in PFC; potential critical period reopening for emotional learning</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1835,35 +2574,95 @@ a:hover { color: var(--accent-soft); }
       <div class="chapter-head">
         <span class="chapter-num">Citations</span>
         <div class="chapter-title">Reference Map</div>
-      <img class="chapter-banner" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80" alt="Library archives - academic references" loading="lazy">
+      <img class="chapter-banner" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200&q=80" alt="Library reference section - primary academic sources" loading="lazy">
       <div class="chapter-inner">
         <div class="chapter-subtitle">Primary Sources · Foundational Texts · Key Meta-Analyses</div>
       </div>
 
       <div class="section">
-        <table class="data-table">
-          <thead><tr><th>Ref</th><th>Source</th><th>Domain</th><th>Year</th></tr></thead>
-          <tbody>
-            <tr><td>[1]</td><td>Bliss & Lømo - Long-lasting potentiation of synaptic transmission in dentate area. <em>J Physiol.</em></td><td>Synaptic Plasticity</td><td>1973</td></tr>
-            <tr><td>[2]</td><td>Baddeley - Working memory. <em>Science.</em></td><td>Cognitive Architecture</td><td>1992</td></tr>
-            <tr><td>[3]</td><td>Kahneman - Thinking, Fast and Slow. Farrar, Straus & Giroux.</td><td>Dual Process</td><td>2011</td></tr>
-            <tr><td>[4]</td><td>Damasio - Descartes' Error. Putnam.</td><td>Emotion & Decision</td><td>1994</td></tr>
-            <tr><td>[5]</td><td>Schultz, Dayan, Montague - A neural substrate of prediction and reward. <em>Science.</em></td><td>Dopamine / RL</td><td>1997</td></tr>
-            <tr><td>[6]</td><td>McEwen & Stellar - Stress and the individual. <em>Arch Intern Med.</em></td><td>Stress / Allostasis</td><td>1993</td></tr>
-            <tr><td>[7]</td><td>Gray & McNaughton - The Neuropsychology of Anxiety. Oxford.</td><td>Temperament</td><td>2000</td></tr>
-            <tr><td>[8]</td><td>Walker - Why We Sleep. Scribner.</td><td>Sleep Science</td><td>2017</td></tr>
-            <tr><td>[9]</td><td>Panksepp - Affective Neuroscience. Oxford.</td><td>Emotion Systems</td><td>1998</td></tr>
-            <tr><td>[10]</td><td>Nader, Schafe, Le Doux - Fear memories require protein synthesis for reconsolidation. <em>Nature.</em></td><td>Memory Reconsolidation</td><td>2000</td></tr>
-            <tr><td>[11]</td><td>Friston - The free-energy principle: a unified brain theory? <em>Nat Rev Neurosci.</em></td><td>Integrative Framework</td><td>2010</td></tr>
-            <tr><td>[12]</td><td>Dehaene - Consciousness and the Brain. Viking.</td><td>Consciousness</td><td>2014</td></tr>
-            <tr><td>[13]</td><td>Kapur - Psychosis as a state of aberrant salience. <em>Am J Psychiatry.</em></td><td>Schizophrenia</td><td>2003</td></tr>
-            <tr><td>[14]</td><td>Deci & Ryan - Self-determination and intrinsic motivation. <em>Psychological Review.</em></td><td>Motivation</td><td>1985</td></tr>
-            <tr><td>[15]</td><td>LeDoux - The Emotional Brain. Simon & Schuster.</td><td>Amygdala / Emotion</td><td>1996</td></tr>
-            <tr><td>[16]</td><td>Meaney - Maternal care, gene expression, and offspring phenotype. <em>Science.</em></td><td>Epigenetics</td><td>2001</td></tr>
-            <tr><td>[17]</td><td>Casey et al. - The adolescent brain. <em>Dev Rev.</em></td><td>Lifespan Development</td><td>2008</td></tr>
-            <tr><td>[18]</td><td>Tononi & Cirelli - Sleep and the price of plasticity. <em>Neuron.</em></td><td>Sleep / Plasticity</td><td>2014</td></tr>
-          </tbody>
-        </table>
+        <div class="citations-grid">
+
+          <div class="citation-group">
+            <div class="citation-group-title">Neuroscience Foundations</div>
+            <div class="citation-item"><span class="citation-ref">[1]</span><span class="citation-text"><strong>Bliss & Lømo</strong> — Long-lasting potentiation of synaptic transmission in dentate area. <em>J Physiol.</em></span><span class="citation-year">1973</span></div>
+            <div class="citation-item"><span class="citation-ref">[5]</span><span class="citation-text"><strong>Schultz, Dayan, Montague</strong> — A neural substrate of prediction and reward. <em>Science.</em></span><span class="citation-year">1997</span></div>
+            <div class="citation-item"><span class="citation-ref">[31]</span><span class="citation-text"><strong>Gazzaniga</strong> — The Bisected Brain. Appleton-Century-Crofts.</span><span class="citation-year">1970</span></div>
+            <div class="citation-item"><span class="citation-ref">[32]</span><span class="citation-text"><strong>Maguire et al.</strong> — Navigation-related structural change in the hippocampi of taxi drivers. <em>PNAS.</em></span><span class="citation-year">2000</span></div>
+            <div class="citation-item"><span class="citation-ref">[33]</span><span class="citation-text"><strong>Dresler et al.</strong> — Mnemonic training reshapes brain networks. <em>Neuron.</em></span><span class="citation-year">2017</span></div>
+            <div class="citation-item"><span class="citation-ref">[34]</span><span class="citation-text"><strong>Cryan & Dinan</strong> — Mind-altering microorganisms: gut microbiota on brain and behaviour. <em>Nat Rev Neurosci.</em></span><span class="citation-year">2012</span></div>
+          </div>
+
+          <div class="citation-group">
+            <div class="citation-group-title">Cognitive Architecture</div>
+            <div class="citation-item"><span class="citation-ref">[2]</span><span class="citation-text"><strong>Baddeley</strong> — Working memory. <em>Science.</em></span><span class="citation-year">1992</span></div>
+            <div class="citation-item"><span class="citation-ref">[3]</span><span class="citation-text"><strong>Kahneman</strong> — Thinking, Fast and Slow. Farrar, Straus & Giroux.</span><span class="citation-year">2011</span></div>
+            <div class="citation-item"><span class="citation-ref">[43]</span><span class="citation-text"><strong>Sweller</strong> — Cognitive load theory. <em>Psychology of Learning and Motivation.</em></span><span class="citation-year">2011</span></div>
+            <div class="citation-item"><span class="citation-ref">[19]</span><span class="citation-text"><strong>Tversky & Kahneman</strong> — Advances in prospect theory. <em>J Risk Uncertainty.</em></span><span class="citation-year">1992</span></div>
+            <div class="citation-item"><span class="citation-ref">[20]</span><span class="citation-text"><strong>Gigerenzer & Todd</strong> — Simple Heuristics That Make Us Smart. Oxford.</span><span class="citation-year">1999</span></div>
+            <div class="citation-item"><span class="citation-ref">[35]</span><span class="citation-text"><strong>Dunning & Kruger</strong> — Unskilled and unaware of it. <em>J Personality & Social Psych.</em></span><span class="citation-year">1999</span></div>
+          </div>
+
+          <div class="citation-group">
+            <div class="citation-group-title">Emotion & Motivation</div>
+            <div class="citation-item"><span class="citation-ref">[4]</span><span class="citation-text"><strong>Damasio</strong> — Descartes' Error. Putnam.</span><span class="citation-year">1994</span></div>
+            <div class="citation-item"><span class="citation-ref">[9]</span><span class="citation-text"><strong>Panksepp</strong> — Affective Neuroscience. Oxford.</span><span class="citation-year">1998</span></div>
+            <div class="citation-item"><span class="citation-ref">[15]</span><span class="citation-text"><strong>LeDoux</strong> — The Emotional Brain. Simon & Schuster.</span><span class="citation-year">1996</span></div>
+            <div class="citation-item"><span class="citation-ref">[14]</span><span class="citation-text"><strong>Deci & Ryan</strong> — Self-determination and intrinsic motivation. <em>Psychological Review.</em></span><span class="citation-year">1985</span></div>
+            <div class="citation-item"><span class="citation-ref">[23]</span><span class="citation-text"><strong>Barrett</strong> — How Emotions Are Made. Houghton Mifflin Harcourt.</span><span class="citation-year">2017</span></div>
+            <div class="citation-item"><span class="citation-ref">[24]</span><span class="citation-text"><strong>Csikszentmihalyi</strong> — Flow: The Psychology of Optimal Experience. Harper & Row.</span><span class="citation-year">1990</span></div>
+          </div>
+
+          <div class="citation-group">
+            <div class="citation-group-title">Memory & Learning</div>
+            <div class="citation-item"><span class="citation-ref">[10]</span><span class="citation-text"><strong>Nader, Schafe, Le Doux</strong> — Fear memories require protein synthesis for reconsolidation. <em>Nature.</em></span><span class="citation-year">2000</span></div>
+            <div class="citation-item"><span class="citation-ref">[16]</span><span class="citation-text"><strong>Meaney</strong> — Maternal care, gene expression, and offspring phenotype. <em>Science.</em></span><span class="citation-year">2001</span></div>
+            <div class="citation-item"><span class="citation-ref">[18]</span><span class="citation-text"><strong>Tononi & Cirelli</strong> — Sleep and the price of plasticity. <em>Neuron.</em></span><span class="citation-year">2014</span></div>
+            <div class="citation-item"><span class="citation-ref">[42]</span><span class="citation-text"><strong>Bavelier et al.</strong> — Removing brakes on adult brain plasticity. <em>Curr Opin Neurobiol.</em></span><span class="citation-year">2010</span></div>
+            <div class="citation-item"><span class="citation-ref">[44]</span><span class="citation-text"><strong>Watts et al.</strong> — Revisiting the marshmallow test. <em>Psychological Science.</em></span><span class="citation-year">2018</span></div>
+            <div class="citation-item"><span class="citation-ref">[46]</span><span class="citation-text"><strong>Macnamara et al.</strong> — Deliberate practice and performance. <em>Psychol Sci.</em></span><span class="citation-year">2014</span></div>
+          </div>
+
+          <div class="citation-group">
+            <div class="citation-group-title">Consciousness & Perception</div>
+            <div class="citation-item"><span class="citation-ref">[12]</span><span class="citation-text"><strong>Dehaene</strong> — Consciousness and the Brain. Viking.</span><span class="citation-year">2014</span></div>
+            <div class="citation-item"><span class="citation-ref">[21]</span><span class="citation-text"><strong>Koch & Crisci</strong> — The neural correlates of consciousness. <em>Nat Rev Neurosci.</em></span><span class="citation-year">2004</span></div>
+            <div class="citation-item"><span class="citation-ref">[22]</span><span class="citation-text"><strong>Chalmers</strong> — Facing up to the problem of consciousness. <em>J Consciousness Studies.</em></span><span class="citation-year">1995</span></div>
+            <div class="citation-item"><span class="citation-ref">[30]</span><span class="citation-text"><strong>Hohwy</strong> — The Predictive Mind. Oxford.</span><span class="citation-year">2013</span></div>
+            <div class="citation-item"><span class="citation-ref">[11]</span><span class="citation-text"><strong>Friston</strong> — The free-energy principle: a unified brain theory? <em>Nat Rev Neurosci.</em></span><span class="citation-year">2010</span></div>
+            <div class="citation-item"><span class="citation-ref">[40]</span><span class="citation-text"><strong>Simons & Chabris</strong> — Gorillas among us: sustained inattentional blindness. <em>Perception.</em></span><span class="citation-year">1999</span></div>
+          </div>
+
+          <div class="citation-group">
+            <div class="citation-group-title">Clinical & Applied</div>
+            <div class="citation-item"><span class="citation-ref">[6]</span><span class="citation-text"><strong>McEwen & Stellar</strong> — Stress and the individual. <em>Arch Intern Med.</em></span><span class="citation-year">1993</span></div>
+            <div class="citation-item"><span class="citation-ref">[13]</span><span class="citation-text"><strong>Kapur</strong> — Psychosis as a state of aberrant salience. <em>Am J Psychiatry.</em></span><span class="citation-year">2003</span></div>
+            <div class="citation-item"><span class="citation-ref">[47]</span><span class="citation-text"><strong>Schuch et al.</strong> — Exercise as a treatment for depression: a meta-analysis. <em>J Psychiatr Res.</em></span><span class="citation-year">2016</span></div>
+            <div class="citation-item"><span class="citation-ref">[48]</span><span class="citation-text"><strong>Porges</strong> — The Polyvagal Theory. Norton.</span><span class="citation-year">2011</span></div>
+            <div class="citation-item"><span class="citation-ref">[45]</span><span class="citation-text"><strong>Milton</strong> — On the ontological status of autism. <em>Disability & Society.</em></span><span class="citation-year">2012</span></div>
+            <div class="citation-item"><span class="citation-ref">[29]</span><span class="citation-text"><strong>Braak & Braak</strong> — Neuropathological staging of Alzheimer-related changes. <em>Acta Neuropathol.</em></span><span class="citation-year">1991</span></div>
+          </div>
+
+          <div class="citation-group">
+            <div class="citation-group-title">Development & Aging</div>
+            <div class="citation-item"><span class="citation-ref">[7]</span><span class="citation-text"><strong>Gray & McNaughton</strong> — The Neuropsychology of Anxiety. Oxford.</span><span class="citation-year">2000</span></div>
+            <div class="citation-item"><span class="citation-ref">[17]</span><span class="citation-text"><strong>Casey et al.</strong> — The adolescent brain. <em>Dev Rev.</em></span><span class="citation-year">2008</span></div>
+            <div class="citation-item"><span class="citation-ref">[25]</span><span class="citation-text"><strong>Carstensen</strong> — Social endocrinology: social relationships and oxytocin. <em>Nat Rev Neurosci.</em></span><span class="citation-year">2006</span></div>
+            <div class="citation-item"><span class="citation-ref">[26]</span><span class="citation-text"><strong>Stern</strong> — Cognitive reserve in ageing and Alzheimer's disease. <em>Lancet Neurol.</em></span><span class="citation-year">2012</span></div>
+            <div class="citation-item"><span class="citation-ref">[27]</span><span class="citation-text"><strong>Bialystok</strong> — The bilingual adaptation. <em>Cognition.</em></span><span class="citation-year">2021</span></div>
+            <div class="citation-item"><span class="citation-ref">[28]</span><span class="citation-text"><strong>Epel, Blackburn et al.</strong> — Accelerated telomere shortening in response to life stress. <em>PNAS.</em></span><span class="citation-year">2004</span></div>
+          </div>
+
+          <div class="citation-group">
+            <div class="citation-group-title">Social & Behavioral</div>
+            <div class="citation-item"><span class="citation-ref">[8]</span><span class="citation-text"><strong>Walker</strong> — Why We Sleep. Scribner.</span><span class="citation-year">2017</span></div>
+            <div class="citation-item"><span class="citation-ref">[37]</span><span class="citation-text"><strong>Dunbar</strong> — Neocortex size as a constraint on group size in primates. <em>J Human Evolution.</em></span><span class="citation-year">1992</span></div>
+            <div class="citation-item"><span class="citation-ref">[38]</span><span class="citation-text"><strong>Ronneberg et al.</strong> — Social jetlag and obesity. <em>Current Biology.</em></span><span class="citation-year">2012</span></div>
+            <div class="citation-item"><span class="citation-ref">[39]</span><span class="citation-text"><strong>Erickson et al.</strong> — Exercise training increases size of hippocampus. <em>PNAS.</em></span><span class="citation-year">2011</span></div>
+            <div class="citation-item"><span class="citation-ref">[41]</span><span class="citation-text"><strong>Frank et al.</strong> — Number as a cognitive technology. <em>Cognition.</em></span><span class="citation-year">2008</span></div>
+            <div class="citation-item"><span class="citation-ref">[36]</span><span class="citation-text"><strong>Barrett</strong> — How Emotions Are Made. Houghton Mifflin Harcourt.</span><span class="citation-year">2017</span></div>
+          </div>
+
+        </div>
       </div>
     </div>
 
