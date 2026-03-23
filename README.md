@@ -6,7 +6,7 @@
 
 ## Overview
 
-The Human Manual is a comprehensive, self-contained guide to understanding human behavior from a neuroscientific and psychological perspective. Built as a single HTML file with no external dependencies, it works perfectly offline on any device with a modern browser, so just download the index.html and open it. Or visit https://4emy.github.io/THM for the online version.
+The Human Manual is a comprehensive, self-contained guide to understanding human behavior from a neuroscientific and psychological perspective. Built as a single HTML file with no external dependencies, it works perfectly offline on any device with a modern browser, so just download the index.html and open it. Or visit https://4emy.github.io/THM for the online ready version.
 
 ---
 
